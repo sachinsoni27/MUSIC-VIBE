@@ -1,0 +1,171 @@
+/* =============================================
+   MUSIC VIBE — Trending Page Specific Styles
+   Global/shared styles are in index.css
+   ============================================= */
+
+/* Remove duplicate reset that fights index.css */
+
+/* Trending page body override (global bg already set) */
+.trending-page { padding-top: 0; }
+
+/* Hero glow animation */
+@keyframes heroGlow { 0%,100%{opacity:.5} 50%{opacity:1} }
+@keyframes badgeBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+@keyframes fireFlicker { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
+
+.trending-badge i { animation: fireFlicker 1.5s infinite; }
+
+/* Verified badge */
+.verified-badge { animation: pulse 2s infinite; }
+
+/* Theme toggle */
+.theme-toggle {
+  position: absolute;
+  top: calc(var(--nav-h) + 20px); right: 22px;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--r-pill);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  z-index: 30;
+  transition: all var(--t);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+}
+
+.theme-toggle:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+
+/* Light theme overrides */
+[data-theme="light"] body {
+  background: #f8faff;
+  color: #0f172a;
+}
+
+[data-theme="light"] .trending-page {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f8ff 50%, #eef2ff 100%);
+  color: #0f172a;
+}
+
+[data-theme="light"] .trending-hero {
+  background:
+    radial-gradient(ellipse 70% 60% at 30% 40%, rgba(124,58,237,0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 75% 60%, rgba(37,99,235,0.15) 0%, transparent 55%),
+    #f8faff;
+}
+
+[data-theme="light"] .filter-btn { background: rgba(0,0,0,0.04); color: #1e293b; border-color: rgba(0,0,0,0.1); }
+[data-theme="light"] .filter-btn.active { background: var(--gradient); color: #fff; }
+[data-theme="light"] .stat-item { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.08); }
+[data-theme="light"] .stat-item h3 { color: #0f172a; }
+[data-theme="light"] .stat-item p { color: #64748b; }
+[data-theme="light"] .now-playing-badge { background: var(--gradient); }
+[data-theme="light"] .song-stats-overlay span { background: rgba(255,255,255,0.9); color: #0f172a; border-color: rgba(0,0,0,0.08); }
+[data-theme="light"] .theme-toggle { background: rgba(0,0,0,0.04); color: #0f172a; border-color: rgba(0,0,0,0.1); }
+[data-theme="light"] nav { background: rgba(255,255,255,0.9); border-bottom-color: rgba(0,0,0,0.08); }
+[data-theme="light"] .brand-title { color: #0f172a; }
+[data-theme="light"] .nav-link { color: #475569; }
+[data-theme="light"] .nav-link:hover { color: #0f172a; background: rgba(0,0,0,0.04); }
+[data-theme="light"] .nav-link.active { color: var(--accent); }
+
+/* Search bar area */
+.filter-and-search { gap: 20px; }
+
+/* My Playlist section (trending page) */
+.playlist-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.playlist-section h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.playlist-message {
+  padding: 8px 16px;
+  background: rgba(124,58,237,0.1);
+  border: 1px solid rgba(124,58,237,0.3);
+  border-radius: var(--r-sm);
+  color: var(--accent-light);
+  font-size: 0.85rem;
+}
+
+.playlist-list { list-style: none; }
+
+.playlist-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  transition: background var(--t);
+  border-radius: var(--r-sm);
+  gap: 12px;
+}
+
+.playlist-item:hover { background: var(--card-hover); }
+
+.playlist-item strong { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+.playlist-item .track-artist { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+
+.muted { color: var(--text-muted); font-size: 0.9rem; padding: 16px 0; }
+
+/* =============================================
+   RESPONSIVE — Trending Page
+   ============================================= */
+
+/* Tablet (max 1024px) */
+@media (max-width: 1024px) {
+  .theme-toggle { top: calc(var(--nav-h) + 14px); right: 16px; }
+  .stat-item { min-width: 160px; padding: 14px 20px; }
+}
+
+/* Small tablet (max 768px) */
+@media (max-width: 768px) {
+  .theme-toggle { top: calc(var(--nav-h) + 10px); right: 14px; padding: 6px 12px; font-size: 0.78rem; }
+  .stat-item { min-width: 130px; padding: 12px 16px; flex: 1 1 calc(33% - 14px); }
+  .stat-item i { font-size: 1.5rem; }
+  .stat-item h3 { font-size: 1.6rem; }
+  .playlist-section { padding: 32px 16px; }
+  .filter-and-search { gap: 12px; }
+  .filter-btn { padding: 7px 14px; font-size: 0.82rem; }
+  .playlist-item { padding: 10px 12px; }
+}
+
+/* Mobile (max 640px) */
+@media (max-width: 640px) {
+  .theme-toggle { top: 10px; right: 10px; padding: 5px 10px; font-size: 0.74rem; }
+  .filter-buttons {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .filter-buttons::-webkit-scrollbar { display: none; }
+  .filter-btn { flex-shrink: 0; }
+  .playlist-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .playlist-item > div:last-child { width: 100%; justify-content: flex-end; }
+}
+
+/* Mobile (max 480px) */
+@media (max-width: 480px) {
+  .stat-item { min-width: unset; flex: 1 1 100%; }
+  .trending-stats { flex-direction: column; gap: 10px; }
+  .playlist-section { padding: 24px 12px; }
+  .playlist-section h3 { font-size: 1.2rem; }
+  .muted { font-size: 0.85rem; }
+  .filter-btn { padding: 6px 12px; font-size: 0.78rem; }
+}
+
+/* Very small (max 360px) */
+@media (max-width: 360px) {
+  .theme-toggle { padding: 5px 8px; font-size: 0.72rem; }
+  .filter-btn { padding: 5px 10px; font-size: 0.74rem; }
+}
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Playlist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            background: #0a0a0a;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background: rgb(13, 118, 199);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        #output {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Playlist Functionality Test</h1>
+    
+    <button onclick="testCreatePlaylist()">Test Create Playlist</button>
+    <button onclick="testAddSong()">Test Add Song</button>
+    <button onclick="testViewPlaylists()">View Playlists</button>
+    <button onclick="clearPlaylists()">Clear All Playlists</button>
+    
+    <div id="output"></div>
+
+    <script>
+        let playlists = JSON.parse(localStorage.getItem('jamifyPlaylists')) || [];
+        
+        function testCreatePlaylist() {
+            const newPlaylist = {
+                id: Date.now().toString(),
+                name: 'Test Playlist ' + (playlists.length + 1),
+                description: 'This is a test playlist',
+                songs: [],
+                createdAt: new Date().toISOString()
+            };
+            
+            playlists.push(newPlaylist);
+            localStorage.setItem('jamifyPlaylists', JSON.stringify(playlists));
+            
+            document.getElementById('output').innerHTML = '<p>✅ Playlist created: ' + newPlaylist.name + '</p>';
+            testViewPlaylists();
+        }
+        
+        function testAddSong() {
+            if (playlists.length === 0) {
+                document.getElementById('output').innerHTML = '<p>❌ No playlists. Create one first!</p>';
+                return;
+            }
+            
+            const testSong = {
+                src: 'test.mp3',
+                title: 'Test Song',
+                artist: 'Test Artist',
+                thumbnail: 'test.jpg'
+            };
+            
+            playlists[0].songs.push(testSong);
+            localStorage.setItem('jamifyPlaylists', JSON.stringify(playlists));
+            
+            document.getElementById('output').innerHTML = '<p>✅ Song added to ' + playlists[0].name + '</p>';
+            testViewPlaylists();
+        }
+        
+        function testViewPlaylists() {
+            playlists = JSON.parse(localStorage.getItem('jamifyPlaylists')) || [];
+            
+            let html = '<h3>Current Playlists:</h3>';
+            
+            if (playlists.length === 0) {
+                html += '<p>No playlists found.</p>';
+            } else {
+                playlists.forEach((playlist, index) => {
+                    html += `
+                        <div style="background: #2a2a2a; padding: 15px; margin: 10px 0; border-radius: 8px;">
+                            <h4>${index + 1}. ${playlist.name}</h4>
+                            <p>Description: ${playlist.description}</p>
+                            <p>Songs: ${playlist.songs.length}</p>
+                            ${playlist.songs.length > 0 ? '<ul>' + playlist.songs.map(s => '<li>' + s.title + ' - ' + s.artist + '</li>').join('') + '</ul>' : ''}
+                        </div>
+                    `;
+                });
+            }
+            
+            document.getElementById('output').innerHTML = html;
+        }
+        
+        function clearPlaylists() {
+            localStorage.removeItem('jamifyPlaylists');
+            playlists = [];
+            document.getElementById('output').innerHTML = '<p>✅ All playlists cleared!</p>';
+        }
+        
+        // Auto-load on page load
+        testViewPlaylists();
+    </script>
+</body>
+</html>
+

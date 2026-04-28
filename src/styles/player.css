@@ -1,0 +1,279 @@
+/* =============================================
+   MUSIC VIBE — Premium Music Player Bar
+   ============================================= */
+@import './design-tokens.css';
+
+.musicplayer {
+  position:fixed;
+  bottom:0; left:0; right:0;
+  height: var(--player-h);
+  background: var(--player-bg);
+  border-top:1px solid var(--border);
+  backdrop-filter:blur(24px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 24px;
+  z-index:900;
+  gap:16px;
+}
+
+/* Left: album art + song info */
+.played-songs {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+  flex:1;
+  max-width:280px;
+}
+
+.player-thumbnail {
+  width:52px; height:52px;
+  border-radius:10px;
+  background-size:cover;
+  background-position:center;
+  background-color: var(--bg3);
+  flex-shrink:0;
+  border:1px solid var(--border);
+  position:relative;
+  overflow:hidden;
+  transition: box-shadow var(--t);
+}
+
+.player-thumbnail.is-playing {
+  box-shadow:0 0 0 2px var(--accent), 0 0 20px var(--accent-glow);
+}
+
+/* Equalizer bars on thumbnail when playing */
+.eq-bars {
+  position:absolute; inset:0;
+  background:rgba(0,0,0,0.55);
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:3px;
+  padding-bottom:8px;
+}
+
+.eq-bar {
+  width:4px;
+  background:var(--accent-light);
+  border-radius:2px;
+  animation: eqAnim 0.6s ease-in-out infinite alternate;
+}
+.eq-bar:nth-child(2) { animation-delay:0.15s; }
+.eq-bar:nth-child(3) { animation-delay:0.3s; }
+
+@keyframes eqAnim {
+  from { height:6px; opacity:0.5; }
+  to   { height:24px; opacity:1; }
+}
+
+.song-details { min-width:0; }
+.song-title {
+  font-size:0.88rem;
+  font-weight:700;
+  color:var(--text);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  margin-bottom:3px;
+}
+
+.song-artist {
+  font-size:0.75rem;
+  color:var(--text-muted);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+
+/* Center: controls + progress */
+.song-controls {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  flex:2;
+  max-width:560px;
+}
+
+.liked { display:none; } /* Moved heart to controls area below */
+
+.controls {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  width:100%;
+}
+
+.player_controls {
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.control-btn {
+  background:none;
+  border:none;
+  color:var(--text-muted);
+  cursor:pointer;
+  width:36px; height:36px;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1rem;
+  transition:all var(--t);
+}
+
+.control-btn:hover { color:var(--text); background:var(--card-hover); }
+.control-btn.active { color:var(--accent-light); }
+
+.play-pause-btn {
+  width:44px; height:44px;
+  background:var(--gradient);
+  color:#fff;
+  font-size:1.1rem;
+  box-shadow:var(--shadow-accent);
+}
+
+.play-pause-btn:hover {
+  transform:scale(1.08);
+  box-shadow:0 8px 30px var(--accent-glow);
+  color:#fff;
+  background:var(--gradient);
+}
+
+.play-pause-btn.playing { box-shadow:0 0 0 3px rgba(124,58,237,0.3), var(--shadow-accent); }
+
+/* Progress */
+.progress-section {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  width:100%;
+}
+
+.time-current, .time-total {
+  font-size:0.72rem;
+  color:var(--text-dim);
+  font-variant-numeric:tabular-nums;
+  flex-shrink:0;
+  width:34px;
+}
+.time-total { text-align:right; }
+
+.progress-container {
+  flex:1;
+  height:4px;
+  background:rgba(255,255,255,0.1);
+  border-radius:var(--r-pill);
+  cursor:pointer;
+  position:relative;
+  transition:height var(--t-fast);
+}
+
+.progress-container:hover { height:6px; }
+
+#progress-bar {
+  height:100%;
+  background:var(--gradient);
+  border-radius:var(--r-pill);
+  position:relative;
+  min-width:0;
+  transition:width 0.1s linear;
+}
+
+#progress-bar::after {
+  content:'';
+  position:absolute;
+  right:-5px; top:50%;
+  transform:translateY(-50%);
+  width:10px; height:10px;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 0 6px var(--accent);
+  opacity:0;
+  transition:opacity var(--t-fast);
+}
+
+.progress-container:hover #progress-bar::after { opacity:1; }
+
+/* Right: volume + extras */
+.speaker {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:1;
+  justify-content:flex-end;
+  max-width:260px;
+}
+
+.volume-icon {
+  color:var(--text-muted);
+  font-size:1rem;
+  cursor:pointer;
+  width:30px; text-align:center;
+  transition:color var(--t);
+  flex-shrink:0;
+}
+
+.volume-icon:hover { color:var(--text); }
+
+#volumeSlider {
+  -webkit-appearance:none;
+  appearance:none;
+  width:90px; height:4px;
+  border-radius:var(--r-pill);
+  background:rgba(255,255,255,0.15);
+  outline:none;
+  cursor:pointer;
+  transition:height var(--t-fast);
+}
+
+#volumeSlider:hover { height:6px; }
+
+#volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance:none;
+  width:14px; height:14px;
+  border-radius:50%;
+  background:var(--accent-light);
+  cursor:pointer;
+  box-shadow:0 0 8px var(--accent-glow);
+}
+
+.extra-controls {
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+/* Heart / like button */
+.liked {
+  display:flex;
+  align-items:center;
+}
+
+.liked .fa-heart {
+  color:var(--text-dim);
+  cursor:pointer;
+  font-size:1rem;
+  transition:all var(--t);
+}
+
+.liked .fa-heart:hover,
+.liked .fa-heart.liked-active { color:#f43f5e; transform:scale(1.2); }
+
+/* Responsive */
+@media (max-width:768px) {
+  .musicplayer { padding:0 14px; gap:10px; }
+  .played-songs { max-width:160px; }
+  .song-controls { max-width:100%; }
+  #volumeSlider { width:60px; }
+  .speaker { max-width:140px; }
+  .player-thumbnail { width:42px; height:42px; }
+}
+
+@media (max-width:480px) {
+  .played-songs { max-width:120px; }
+  .time-current, .time-total { display:none; }
+  .extra-controls { display:none; }
+  #volumeSlider { width:50px; }
+}

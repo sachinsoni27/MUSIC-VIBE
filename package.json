@@ -1,0 +1,61 @@
+{
+  "name": "jamify-music-app",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Jamify Music Streaming Platform with User Authentication and Feedback System",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node server/server.cjs",
+    "server:dev": "nodemon server/server.cjs",
+    "test:integration": "jest --runInBand",
+    "test:integration:ci": "node scripts/run-integration-tests.cjs",
+    "test:otp-flow": "node scripts/test-otp-flow.cjs",
+    "test:otp": "jest tests/integration/auth.otp.test.js --runInBand",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test": "npm run test:integration && npm run test:e2e",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [
+    "music",
+    "streaming",
+    "jamify",
+    "authentication",
+    "react",
+    "vite"
+  ],
+  "author": "Jamify Team",
+  "license": "MIT",
+  "dependencies": {
+    "@clerk/clerk-react": "^5.59.2",
+    "axios": "^1.4.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.1",
+    "nodemailer": "^7.0.12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^6.20.0",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "gh-pages": "^5.0.0",
+    "jest": "^30.2.0",
+    "mongodb-memory-server": "^11.0.1",
+    "nodemon": "^3.0.1",
+    "supertest": "^7.1.4",
+    "vite": "^7.3.0"
+  }
+}

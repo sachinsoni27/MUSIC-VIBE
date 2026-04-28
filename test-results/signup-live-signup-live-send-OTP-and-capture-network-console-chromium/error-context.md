@@ -1,0 +1,53 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - heading "Create Account" [level=1] [ref=e7]
+    - paragraph [ref=e8]: Join Music Vibe and start your music journey
+  - generic [ref=e9]:
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - generic [ref=e12]: 
+        - text: Full Name
+      - textbox " Full Name" [ref=e13]:
+        - /placeholder: Enter your full name
+        - text: sachin soni
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - generic [ref=e16]: 
+        - text: Username
+      - textbox " Username" [active] [ref=e17]:
+        - /placeholder: Choose a username
+        - text: sachin soni
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]: 
+        - text: Email Address
+      - textbox " Email Address" [ref=e21]:
+        - /placeholder: Enter your email
+        - text: test+live@musicvibe.example
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - generic [ref=e24]: 
+        - text: Password (optional for email OTP)
+      - generic [ref=e25]:
+        - textbox " Password (optional for email OTP)" [ref=e26]:
+          - /placeholder: Create a password (optional)
+        - button "" [ref=e27] [cursor=pointer]:
+          - generic: 
+    - generic [ref=e29] [cursor=pointer]:
+      - checkbox "I agree to the Terms and Conditions" [checked] [ref=e30]
+      - generic [ref=e31]: I agree to the Terms and Conditions
+    - button " Sending OTP..." [disabled] [ref=e32]:
+      - generic [ref=e33]: 
+      - text: Sending OTP...
+    - generic [ref=e34]:
+      - paragraph [ref=e35]:
+        - text: Already have an account?
+        - link "Login" [ref=e36] [cursor=pointer]:
+          - /url: /login
+      - paragraph [ref=e37]:
+        - link "← Back to Home" [ref=e38] [cursor=pointer]:
+          - /url: /
+```

@@ -1,0 +1,264 @@
+/* =============================================
+   MUSIC VIBE — Main Style Entry
+   All component styles are imported from partials.
+   Legacy overrides kept at the bottom for compat.
+   ============================================= */
+@import './base.css';
+@import './navbar.css';
+@import './home.css';
+@import './sections.css';
+@import './player.css';
+
+/* ---- Page padding (content below fixed nav + player) ---- */
+.home-page,
+.trending-page { padding-bottom: var(--player-h); }
+
+/* ---- Footer ---- */
+footer {
+  background: var(--bg2);
+  border-top:1px solid var(--border);
+  padding: 48px 32px 32px;
+  color: var(--text-muted);
+  font-size:0.88rem;
+}
+
+/* ---- Filter / Search (Trending page) ---- */
+.filter-and-search {
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  margin-bottom:32px;
+}
+
+.filter-buttons {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.filter-btn {
+  display:flex; align-items:center; gap:8px;
+  padding:9px 22px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r-pill);
+  color:var(--text-muted);
+  font-size:0.88rem;
+  font-weight:500;
+  cursor:pointer;
+  transition:all var(--t);
+  font-family:'Inter',sans-serif;
+  backdrop-filter:blur(8px);
+}
+
+.filter-btn:hover {
+  background:var(--card-hover);
+  border-color:var(--border-hover);
+  color:var(--text);
+  transform:translateY(-2px);
+}
+
+.filter-btn.active {
+  background:var(--gradient);
+  border-color:transparent;
+  color:#fff;
+  box-shadow:var(--shadow-accent);
+  transform:translateY(-2px);
+}
+
+/* ---- Trending page hero ---- */
+.trending-page {
+  background: var(--bg);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.trending-hero {
+  position:relative;
+  height:65vh;
+  min-height:480px;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse 70% 60% at 30% 40%, rgba(124,58,237,0.4) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 75% 60%, rgba(37,99,235,0.3) 0%, transparent 55%),
+    var(--bg);
+  margin-top:0;
+  padding-top: var(--nav-h);
+}
+
+.trending-hero::before {
+  content:'';
+  position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 30% 50%, rgba(124,58,237,0.25) 0%, transparent 50%),
+    radial-gradient(circle at 70% 50%, rgba(37,99,235,0.2) 0%, transparent 50%);
+  animation:heroGlow 4s ease-in-out infinite;
+}
+
+@keyframes heroGlow { 0%,100%{opacity:.5} 50%{opacity:1} }
+
+.trending-hero-overlay {
+  position:absolute; inset:0;
+  background:rgba(0,0,0,0.25);
+}
+
+.trending-hero-content {
+  position:relative; z-index:2;
+  text-align:center;
+  max-width:800px;
+  padding:0 24px;
+  animation:fadeInUp 0.9s ease;
+}
+
+.trending-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--gradient);
+  padding:10px 24px;
+  border-radius:var(--r-pill);
+  font-size:0.85rem; font-weight:700; color:#fff;
+  letter-spacing:1.5px;
+  margin-bottom:24px;
+  box-shadow:var(--shadow-accent);
+  animation:float 3s ease-in-out infinite;
+}
+
+.trending-hero-title {
+  font-size:clamp(2.5rem,6vw,4.5rem);
+  font-weight:900;
+  margin:0 0 16px;
+  letter-spacing:-2px;
+  text-transform:uppercase;
+}
+
+.trending-hero-subtitle {
+  font-size:clamp(1rem,2vw,1.25rem);
+  color:var(--text-muted);
+  margin-bottom:40px;
+  font-weight:300;
+}
+
+.trending-stats {
+  display:flex; justify-content:center; gap:20px; flex-wrap:wrap;
+}
+
+.stat-item {
+  display:flex; align-items:center; gap:14px;
+  background:var(--card);
+  backdrop-filter:blur(12px);
+  padding:18px 28px;
+  border-radius:var(--r-lg);
+  border:1px solid var(--border);
+  transition:all var(--t);
+  flex:1; min-width:200px; max-width:280px;
+}
+
+.stat-item:hover {
+  transform:translateY(-6px);
+  border-color:var(--border-hover);
+  box-shadow:var(--shadow-glow);
+}
+
+.stat-item i { font-size:2rem; background:var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.stat-item h3 { font-size:2rem; font-weight:800; color:#fff; margin:0; }
+.stat-item p { font-size:0.78rem; color:var(--text-muted); margin:0; text-transform:uppercase; letter-spacing:1px; }
+
+/* My Playlist section */
+.playlist-section { background:var(--bg2); border-top:1px solid var(--border); }
+.playlist-list { list-style:none; }
+.playlist-item { border-bottom-color: var(--border) !important; }
+
+.btn-danger {
+  padding:6px 14px;
+  background:rgba(244,63,94,0.15);
+  color:#f43f5e;
+  border:1px solid rgba(244,63,94,0.3);
+  border-radius:var(--r-pill);
+  cursor:pointer;
+  font-size:0.82rem;
+  font-family:'Inter',sans-serif;
+  transition:all var(--t);
+}
+.btn-danger:hover { background:rgba(244,63,94,0.3); }
+
+/* Loader / Error */
+.loader, .error, .no-results {
+  text-align:center;
+  padding:40px;
+  color:var(--text-muted);
+  font-size:0.9rem;
+}
+
+/* Scroll animations */
+.animate-on-scroll {
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.animate-on-scroll.animate-in { opacity:1; transform:translateY(0); }
+
+/* Trend icons */
+.trend-up   { color:#4ade80; }
+.trend-down { color:#f87171; }
+.trend-same { color:#fbbf24; }
+
+/* Now playing badge / song-rank-badge already in sections.css */
+
+/* =============================================
+   RESPONSIVE — Index / Trending Hero & General
+   ============================================= */
+
+/* Tablet (max 1024px) */
+@media (max-width: 1024px) {
+  .trending-hero { height: 55vh; min-height: 400px; }
+  .trending-stats { gap: 14px; }
+  .stat-item { padding: 14px 22px; min-width: 160px; }
+  footer { padding: 36px 24px 24px; }
+}
+
+/* Small tablet (max 768px) */
+@media (max-width: 768px) {
+  .trending-hero { height: auto; min-height: 360px; padding-top: var(--nav-h); padding-bottom: 32px; }
+  .trending-hero-title { margin-bottom: 12px; }
+  .trending-hero-subtitle { margin-bottom: 28px; }
+  .trending-stats { gap: 10px; }
+  .stat-item {
+    flex: 1 1 calc(33% - 10px);
+    min-width: 120px;
+    padding: 12px 16px;
+  }
+  .stat-item i { font-size: 1.6rem; }
+  .stat-item h3 { font-size: 1.6rem; }
+  .filter-and-search { gap: 12px; margin-bottom: 24px; }
+  footer { padding: 28px 16px 20px; }
+}
+
+/* Mobile (max 480px) */
+@media (max-width: 480px) {
+  .trending-hero { min-height: 320px; }
+  .trending-badge { padding: 8px 16px; font-size: 0.78rem; margin-bottom: 16px; }
+  .trending-stats {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .stat-item {
+    flex: unset;
+    flex-direction: row;
+    min-width: unset;
+    padding: 12px 16px;
+    gap: 14px;
+  }
+  .stat-item i { font-size: 1.4rem; }
+  .stat-item h3 { font-size: 1.4rem; }
+  .stat-item p { font-size: 0.72rem; }
+  footer { padding: 24px 12px 16px; font-size: 0.82rem; }
+}
+
+/* Very small (max 360px) */
+@media (max-width: 360px) {
+  .trending-badge { font-size: 0.72rem; padding: 6px 14px; }
+  .stat-item { padding: 10px 14px; }
+  .stat-item h3 { font-size: 1.2rem; }
+}
+

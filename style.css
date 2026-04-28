@@ -1,0 +1,1430 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.458);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    padding: 0 20px;
+}
+nav .logo{
+    display: none;
+}
+nav .nav-links{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+nav #links{
+    padding-right: 30px;
+    padding-left: 30px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: bold;
+    transition: all 0.4s ease;
+}
+#links:hover{
+    color: rgb(13, 118, 199);
+}
+.auth-buttons a:hover,
+.user-menu button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(13, 118, 199, 0.4);
+}
+.user-menu{
+    display: flex;
+    align-items: center;
+}
+.container1{
+    width: 100%;
+    height: 100vh;
+    background-image: url("Gemini_Generated_Image_gkv3r3gkv3r3gkv3.png");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+.bg-video video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.7;
+}
+.hero-content{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+}
+.hero-title{
+    font-size: 4.5rem;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease;
+}
+.hero-subtitle{
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease;
+}
+.stats-container{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    animation: fadeInUp 1.2s ease;
+}
+.stat-item{
+    text-align: center;
+}
+.stat-item i{
+    font-size: 2.5rem;
+    color: rgb(13, 118, 199);
+    margin-bottom: 10px;
+}
+.stat-item h3{
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.stat-item p{
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.song-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    animation: fadeIn 1.5s ease;
+}
+#start-btn{
+    padding: 15px 40px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, rgb(13, 118, 199), rgb(10, 95, 160));
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0px 5px 20px rgba(13, 118, 199, 0.4);
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#start-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 30px rgba(13, 118, 199, 0.6);
+}
+#explore-btn{
+    padding: 15px 40px;
+    border-radius: 50px;
+    border: 2px solid rgb(13, 118, 199);
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#explore-btn:hover{
+    background-color: rgb(13, 118, 199);
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 30px rgba(13, 118, 199, 0.4);
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.container2{
+    height: 100vh;
+    width: 100%;
+    background: #C33764;  
+    background: -webkit-linear-gradient(to right, #1D2671, #C33764); 
+    background: linear-gradient(to right, #1D2671, #C33764);
+    padding: 10px;
+    color: #fff;
+}
+.container2 .Artist-contain{
+    height: 90vh;
+    width: 100%;
+}
+.container2 .Artist-contain .Artists .singer{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.container2 .Artist-contain .Artists #Singer1{
+    background-image: url("darshan.jpeg");
+    background-size: cover;
+}
+.container2 .Artist-contain .Artists #Singer2{
+    background-image: url("arijit\ singh.jpeg");
+    background-size: cover;
+}
+.container2 .Artist-contain .Artists #Singer3{
+    background-image: url("jubin\ nautiyal.jpeg");
+    background-size: cover;
+}
+.container2 .Artist-contain .Artists #Singer4{
+    background-image: url("anuv\ jain.jpeg");
+    background-size: cover;
+}
+.container2 .Artist-contain .Artists #Singer5{
+    background-image: url("diljit.jpeg");
+    background-size: cover;
+}
+.container2 .Artist-contain .Artists{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.container2 .Artist-contain .Artists-recomm1{
+    height: 49vh;
+    width: 100%;
+    display: none;
+}
+.container2 .Artist-contain .Artists-recomm .artist1_Recomm{
+    height: 49vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    border-radius: 10px;
+}
+.Artists-recomm .artist1_Recomm .left_recom{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.Artists-recomm .artist1_Recomm .left_recom .recom{
+    height: 60px;
+    width: 95%;
+    border-radius: 10px;
+    padding: 20px;
+    transition:all 0.4s ease;
+    border:1px solid #441d71d4 ;
+}
+.Artists-recomm .artist1_Recomm .left_recom .recom:hover{
+    transform: scale(1.02);
+    background: #8937c3;  
+    background: -webkit-linear-gradient(to right, #441d71d4, #4a37c3cb); 
+    background: linear-gradient(to right, #441d71d3, #4a37c3ce);
+}
+.Artists-recomm .artist1_Recomm .right_recom{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.Artists-recomm .artist1_Recomm .right_recom .recom{
+    height: 60px;
+    width: 95%;
+    border-radius: 10px;
+    padding: 20px;
+    border:1px solid #441d71d4 ;
+}
+.Artists-recomm .artist1_Recomm .right_recom .recom{
+    height: 60px;
+    width: 95%;
+    border-radius: 10px;
+    padding: 20px;
+    transition:all 0.4s ease;
+}
+.Artists-recomm .artist1_Recomm .right_recom .recom:hover{
+    transform: scale(1.02);
+    background: #8937c3;  
+    background: -webkit-linear-gradient(to right, #441d71d4, #4a37c3cb); 
+    background: linear-gradient(to right, #441d71d3, #4a37c3ce);
+}
+/* artist recommendation 2 */
+
+.container2 .Artist-contain .Artists-recomm2{
+    height: 49vh;
+    width: 100%;
+}
+.container2 .Artist-contain .Artists-recomm2 .artist2_Recomm{
+    height: 49vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    border-radius: 10px;
+}
+.Artists-recomm2 .artist2_Recomm .left_recom{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.Artists-recomm2 .artist2_Recomm .left_recom .recom{
+    height: 60px;
+    width: 95%;
+    border-radius: 10px;
+    padding: 20px;
+    transition:all 0.4s ease;
+    border:1px solid #441d71d4 ;
+}
+.Artists-recomm2 .artist2_Recomm .left_recom .recom:hover{
+    transform: scale(1.02);
+    background: #8937c3;  
+    background: -webkit-linear-gradient(to right, #441d71d4, #4a37c3cb); 
+    background: linear-gradient(to right, #441d71d3, #4a37c3ce);
+}
+.Artists-recomm2 .artist2_Recomm .right_recom{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.Artists-recomm2 .artist2_Recomm .right_recom .recom{
+    height: 60px;
+    width: 95%;
+    border-radius: 10px;
+    padding: 20px;
+    border:1px solid #441d71d4 ;
+}
+.Artists-recomm2 .artist2_Recomm .right_recom .recom{
+    height: 60px;
+    width: 95%;
+    border-radius: 10px;
+    padding: 20px;
+    transition:all 0.4s ease;
+}
+.Artists-recomm2 .artist2_Recomm .right_recom .recom:hover{
+    transform: scale(1.02);
+    background: #8937c3;  
+    background: -webkit-linear-gradient(to right, #441d71d4, #4a37c3cb); 
+    background: linear-gradient(to right, #441d71d3, #4a37c3ce);
+}
+.Artists-recomm2 .artist2_Recomm .left_recom #recom1{
+    display: none;
+}
+.Artists-recomm2 .artist2_Recomm .left_recom #recom2{
+    display: none;
+}
+.Artists-recomm2 .artist2_Recomm .left_recom #recom3{
+    display: none;
+}
+.Artists-recomm2 .artist2_Recomm .left_recom #recom4{
+    display: none;
+}
+.Artists-recomm2 .artist2_Recomm .left_recom #recom5{
+    display: none;
+}
+.Artists-recomm2 .artist2_Recomm .right_recom #recom6{
+    display: none;
+}
+.Artists-recomm2 .artist2_Recomm .right_recom #recom7{
+    display: none;
+}
+
+.container3{
+    display: flex;
+    justify-content: center;
+    background: #C33764;  
+background: -webkit-linear-gradient(to right, #1D2671, #C33764); 
+background: linear-gradient(to right, #1D2671, #C33764);
+}
+.container3 #trending{
+    font-size: 3rem;
+    color: #fff;
+    margin-left: 55px;
+    margin-top: 30px;
+}
+.container3 .suggested-songs{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #fff;
+}
+.container3 .artist-sec{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+}
+.container3 .artist-contain{
+    height: 250px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+.container3 .artist-sec .artist-card1{
+    height: 800px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    background-image: url("darshan.jpeg");
+    background-size: cover;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+.container3 .darshan_suggest_song{
+    height: 400px;
+    width: 400px;
+    background-color: #000;
+}
+.container3 .artist-sec .artist-card2{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-image: url("arijit\ singh.jpeg");
+    background-size: cover;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+.container3 .artist-sec .artist-card3{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-image: url("jubin\ nautiyal.jpeg");
+    background-size: cover;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+.container3 .artist-sec .artist-card4{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+     background-image: url("gajendra\ verma.jpeg");
+    background-size: cover;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+.container3 .artist-sec .artist-card5{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-image: url("anuv\ jain.jpeg");
+    background-size: cover;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+.container3 .songs-sec{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    overflow: hidden;
+    gap: 40px;
+}
+.container3 .songs-contain{
+    height: 280px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.container3 .songs-contain:hover{
+    transform: translateY(-10px);
+}
+.container3 .songs-contain audio{
+    display: none;
+}
+.container3 .songs-contain .artist-name{
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+.play-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    border-radius: 20%;
+}
+.play-overlay i{
+    font-size: 3rem;
+    color: #fff;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+}
+.songs-contain:hover .play-overlay{
+    opacity: 1;
+}
+.songs-contain:hover .play-overlay i{
+    transform: scale(1);
+}
+
+.container3  #suggest-artist{
+    transition: all 0.5s ease;
+}
+.container3  #suggest-artist:hover{
+    transform: scale(1.1);
+}
+.container3 .songs-contain #suggest-song{
+    transition: all 0.5s ease;
+}
+.container3 .songs-contain #suggest-song:hover{
+   transform: scale(1.1);
+}
+.container3 .songs-sec .songs-card1{
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    background-image: url("Arz\ Kiya\ Hai\ _\ Coke\ Studio.jpg");
+    background-size: cover;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+.container3 .songs-sec #Jhol{
+    display: none;
+}
+.container3 .songs-sec #Arzkiya{
+    display: none;
+}
+.container3 .songs-sec #Saiyaara{
+    display: none;
+}
+.container3 .songs-sec #Barbaad{
+    display: none;
+}
+.container3 .songs-sec #Mahiye-Jinna-Sohna{
+    display: none;
+}
+.container3 .songs-sec #Barbaad_aabaad{
+    display: none;
+}
+.container3 .songs-sec .songs-card2{
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    background-image: url("jhol.jpeg");
+    background-size: cover;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+.container3 .songs-sec .songs-card3{
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    background-image: url("mahiye\ jinna\ sohna.jpeg");
+    background-size: cover;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+.container3 .songs-sec .songs-card4{
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    background-image: url("barbaad.jpeg");
+    background-size: cover;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+.container3 .songs-sec .songs-card5{
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    background-image: url("aabaad\ barbad.jpeg");
+    background-size: cover;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+.container3 .songs-sec .songs-card6{
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    background-image: url("saiyaara.jpeg");
+    background-size: cover;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+.container3 .songs-sec .songs-card7{
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    background-color: #160a92;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+.musicplayer{
+    height: 90px;
+    width: 100%;
+    background: linear-gradient(to right, #000000, #1a1a1a);
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.played-songs{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 250px;
+}
+.player-thumbnail{
+    height: 60px;
+    width: 60px;
+    background-image: url("Arz\ Kiya\ Hai\ _\ Coke\ Studio.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.song-details{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.song-title{
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+.song-artist{
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    margin: 0;
+}
+.song-controls{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 700px;
+}
+.song-controls .liked{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.song-controls .liked i{
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+.song-controls .liked:hover i{
+    color: #ff6b6b;
+    transform: scale(1.2);
+}
+.song-controls .liked.active i{
+    color: #ff6b6b;
+}
+.song-controls .controls{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.song-controls .player_controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.control-btn{
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
+}
+.control-btn:hover{
+    color: rgb(13, 118, 199);
+    transform: scale(1.1);
+}
+.play-pause-btn{
+    width: 45px;
+    height: 45px;
+    background: rgb(13, 118, 199);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+.play-pause-btn:hover{
+    background: rgb(10, 95, 160);
+    transform: scale(1.1);
+}
+.progress-section{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+.time-current, .time-total{
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+    min-width: 40px;
+}
+.progress-container{
+    flex: 1;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+#progress-bar{
+    height: 100%;
+    background: linear-gradient(90deg, rgb(13, 118, 199), rgb(10, 95, 160));
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.1s linear;
+    position: relative;
+}
+#progress-bar::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.progress-container:hover #progress-bar::after{
+    opacity: 1;
+}
+.speaker{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 250px;
+    justify-content: flex-end;
+}
+.volume-icon{
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+.volume-icon:hover{
+    color: rgb(13, 118, 199);
+}
+#volumeSlider{
+    width: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    /* -webkit-appearance: none; */
+}
+#volumeSlider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: rgb(13, 118, 199);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#volumeSlider::-webkit-slider-thumb:hover{
+    transform: scale(1.2);
+}
+#volumeSlider::-moz-range-thumb{
+    width: 12px;
+    height: 12px;
+    background: rgb(13, 118, 199);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+.extra-controls{
+    display: flex;
+    gap: 10px;
+}
+.extra-controls .control-btn{
+    font-size: 1rem;
+}
+.extra-controls .control-btn.active{
+    color: rgb(13, 118, 199);
+}
+
+/* Playlist Section Styles */
+.container-playlist {
+    width: 100%;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    min-height: 400px;
+}
+
+.playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.playlist-header h2 {
+    font-size: 3rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.playlist-header h2 i {
+    color: rgb(13, 118, 199);
+}
+
+.create-playlist-btn {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, rgb(13, 118, 199), rgb(10, 95, 160));
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(13, 118, 199, 0.3);
+}
+
+.create-playlist-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(13, 118, 199, 0.5);
+}
+
+.playlists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.empty-playlist-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.empty-playlist-message i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.3;
+}
+
+.empty-playlist-message p {
+    font-size: 1.3rem;
+}
+
+.playlist-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.playlist-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, rgb(13, 118, 199), rgb(10, 95, 160));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.playlist-card:hover::before {
+    transform: scaleX(1);
+}
+
+.playlist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(13, 118, 199, 0.3);
+    border-color: rgb(13, 118, 199);
+    background: rgba(13, 118, 199, 0.1);
+}
+
+.playlist-card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.playlist-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgb(13, 118, 199), rgb(10, 95, 160));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.playlist-card-info h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.playlist-card-info p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+.playlist-card-footer {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playlist-song-count {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.playlist-song-count i {
+    color: rgb(13, 118, 199);
+    margin-right: 5px;
+}
+
+/* Add to Playlist Button on Song Cards */
+.songs-contain {
+    position: relative;
+}
+
+.song-card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-to-playlist-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: rgba(13, 118, 199, 0.9);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.songs-contain:hover .add-to-playlist-btn {
+    opacity: 1;
+}
+
+.add-to-playlist-btn:hover {
+    background: rgb(13, 118, 199);
+    transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-large {
+    max-width: 700px;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    padding: 25px 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.modal-header h2 i {
+    color: rgb(13, 118, 199);
+}
+
+.close-modal {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: rgb(13, 118, 199);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.modal-body input,
+.modal-body textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.modal-body input:focus,
+.modal-body textarea:focus {
+    outline: none;
+    border-color: rgb(13, 118, 199);
+    background: rgba(13, 118, 199, 0.1);
+}
+
+.modal-body textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.modal-footer {
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.btn-cancel,
+.btn-create,
+.btn-delete {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.btn-cancel:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-create {
+    background: linear-gradient(135deg, rgb(13, 118, 199), rgb(10, 95, 160));
+    color: #fff;
+}
+
+.btn-create:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(13, 118, 199, 0.4);
+}
+
+.btn-delete {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: #fff;
+}
+
+.btn-delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(231, 76, 60, 0.4);
+}
+
+.song-to-add {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.song-to-add img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.song-to-add-info h4 {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.song-to-add-info p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+.playlist-selection {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.playlist-option {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playlist-option:hover {
+    background: rgba(13, 118, 199, 0.2);
+    border-color: rgb(13, 118, 199);
+}
+
+.playlist-option h4 {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.playlist-option p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+}
+
+.playlist-songs {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.playlist-song-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.playlist-song-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.playlist-song-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.playlist-song-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.playlist-song-details h4 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.playlist-song-details p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+}
+
+.playlist-song-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.song-action-btn {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.song-action-btn:hover {
+    background: rgb(13, 118, 199);
+    transform: scale(1.1);
+}
+
+.song-action-btn.delete:hover {
+    background: #e74c3c;
+}
+
+.playlist-info {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.playlist-info p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+.empty-playlist {
+    text-align: center;
+    padding: 40px 20px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.empty-playlist i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.3;
+}
+
+.footer {
+  background-color: #000; /* Black background */
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  margin: 15px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #ff078f; /* Highlighted red color for headings */
+}
+
+.footer-section p, 
+.footer-section a, 
+.footer-section li {
+  font-size: 14px;
+  color: #bbb;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #ff078f; /* Highlight color on hover */
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+/* Social Media Icons */
+.footer-section.social a {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 22px;
+  color: #bbb;  /* default grey */
+  transition: 0.3s;
+}
+.footer-section-contact{
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+    font-size: 14px;
+    font-weight: 100;
+    gap: 10px;
+}
+.footer-section-contact #contact{
+    color: #ff078f;
+}
+
+/* Brand Colors on Hover */
+.footer-section.social a.facebook:hover {
+  color: #1877F2; /* Facebook Blue */
+}
+
+.footer-section.social a.twitter:hover {
+  color: #1DA1F2; /* Twitter Blue */
+}
+
+.footer-section.social a.instagram:hover {
+  color: #E4405F; /* Instagram Pink */
+}
+
+.footer-section.social a.youtube:hover {
+  color: #FF0000; /* YouTube Red */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #777;
+}
+

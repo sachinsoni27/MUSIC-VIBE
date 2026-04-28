@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Feature Demo - Music Vibe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 3rem;
+            background: linear-gradient(135deg, rgb(13, 118, 199), rgb(10, 95, 160));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .section h2 {
+            color: rgb(13, 118, 199);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .step {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid rgb(13, 118, 199);
+        }
+        
+        .step h3 {
+            color: rgb(13, 118, 199);
+            margin-bottom: 10px;
+        }
+        
+        .step p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        
+        .button-demo {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, rgb(13, 118, 199), rgb(10, 95, 160));
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .button-demo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(13, 118, 199, 0.5);
+        }
+        
+        .screenshot {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: rgb(13, 118, 199);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .alert {
+            background: rgba(13, 118, 199, 0.2);
+            border: 2px solid rgb(13, 118, 199);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .alert h3 {
+            color: rgb(13, 118, 199);
+            margin-bottom: 10px;
+        }
+        
+        code {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: rgb(13, 118, 199);
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1><i class="fas fa-music"></i> Music Vibe Playlist Feature Demo</h1>
+        
+        <div class="alert">
+            <h3><i class="fas fa-info-circle"></i> Quick Start</h3>
+            <p>The playlist feature has been successfully added to your Music Vibe website! Follow the steps below to use it.</p>
+            <div style="margin-top: 15px;">
+                <a href="index.html" class="button-demo"><i class="fas fa-home"></i> Open Main Page</a>
+                <a href="test-playlist.html" class="button-demo"><i class="fas fa-flask"></i> Test Functionality</a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-check-circle"></i> Features Added</h2>
+            <ul class="feature-list">
+                <li>Create unlimited custom playlists</li>
+                <li>Add any song to multiple playlists</li>
+                <li>View all songs in a playlist</li>
+                <li>Play songs directly from playlists</li>
+                <li>Remove songs from playlists</li>
+                <li>Delete entire playlists</li>
+                <li>Persistent storage (saves in browser)</li>
+                <li>Beautiful UI with smooth animations</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-map-marked-alt"></i> How to Access</h2>
+            
+            <div class="step">
+                <h3>Step 1: Open the Main Page</h3>
+                <p>Open <code>index.html</code> in your browser</p>
+            </div>
+            
+            <div class="step">
+                <h3>Step 2: Navigate to Playlists</h3>
+                <p><strong>Option A:</strong> Click "Playlists" in the navigation bar (it will scroll down)</p>
+                <p><strong>Option B:</strong> Scroll down past the hero video section</p>
+            </div>
+            
+            <div class="step">
+                <h3>Step 3: You Should See</h3>
+                <p>• A section titled "My Playlists" with a blue icon</p>
+                <p>• A blue "Create Playlist" button on the right</p>
+                <p>• A message saying "No playlists yet. Create your first playlist!"</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-play-circle"></i> How to Use</h2>
+            
+            <div class="step">
+                <h3>Creating a Playlist</h3>
+                <p>1. Click the "Create Playlist" button</p>
+                <p>2. Enter a name (e.g., "My Favorites")</p>
+                <p>3. Optionally add a description</p>
+                <p>4. Click "Create"</p>
+                <p>5. Your playlist card will appear!</p>
+            </div>
+            
+            <div class="step">
+                <h3>Adding Songs</h3>
+                <p>1. Scroll down to the "Trending Artists" section</p>
+                <p>2. Hover over any song card</p>
+                <p>3. Click the "+" button that appears in the top-right corner</p>
+                <p>4. Select which playlist to add it to</p>
+                <p>5. You'll see a success notification!</p>
+            </div>
+            
+            <div class="step">
+                <h3>Viewing & Playing</h3>
+                <p>1. Click on any playlist card</p>
+                <p>2. A modal opens showing all songs</p>
+                <p>3. Click the play button (▶) to play a song</p>
+                <p>4. Click the trash icon (🗑️) to remove a song</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-question-circle"></i> Troubleshooting</h2>
+            
+            <div class="step">
+                <h3>Can't see the playlist section?</h3>
+                <p>• Make sure you scroll down on the page</p>
+                <p>• Click "Playlists" in the navigation bar</p>
+                <p>• The section is between the hero video and "Trending Artists"</p>
+            </div>
+            
+            <div class="step">
+                <h3>Button doesn't work?</h3>
+                <p>• Open browser console (Press F12)</p>
+                <p>• Look for any error messages</p>
+                <p>• You should see: "🎵 Initializing playlist functionality..."</p>
+            </div>
+            
+            <div class="step">
+                <h3>Want to start fresh?</h3>
+                <p>• Open browser console (F12)</p>
+                <p>• Type: <code>localStorage.removeItem('jamifyPlaylists')</code></p>
+                <p>• Press Enter and refresh the page</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html" class="button-demo" style="font-size: 1.3rem; padding: 15px 40px;">
+                <i class="fas fa-rocket"></i> Try It Now!
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+

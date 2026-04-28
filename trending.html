@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending Artists - Music Vibe</title>
+    <link rel="stylesheet" href="trending.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo"></div>
+        <div class="nav-links">
+            <a id="links" href="index.html">Home</a>
+            <a id="links" href="trending.html">Trending</a>
+            <a id="links" href="about.html">About</a>
+            <a id="links" href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="trending-container">
+        <div class="page-header">
+            <h1><i class="fas fa-fire"></i> Trending Artists</h1>
+            <p>Discover the hottest artists and their latest hits</p>
+        </div>
+
+        <!-- Artist 1: Darshan Raval -->
+        <div class="artist-section" id="darshan-raval">
+            <div class="artist-header">
+                <div class="artist-image" style="background-image: url('darshan.jpeg');"></div>
+                <div class="artist-info">
+                    <h2>Darshan Raval</h2>
+                    <p class="artist-genre"><i class="fas fa-music"></i> Pop, Romantic</p>
+                    <p class="artist-description">Indian playback singer, composer, and songwriter known for his melodious voice and romantic songs.</p>
+                    <div class="artist-stats">
+                        <span><i class="fas fa-headphones"></i> 10M+ Listeners</span>
+                        <span><i class="fas fa-heart"></i> 5M+ Likes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="songs-grid">
+                <div class="song-card" onclick="playSong('darshan1')">
+                    <div class="song-image" style="background-image: url('darshan.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Baarishon Mein</h3>
+                        <p>Darshan Raval</p>
+                        <audio id="darshan1" src="Baarishon Mein Darshan Raval 320 Kbps.mp3"></audio>
+                        <button class="play-btn" id="btn-darshan1"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('darshan2')">
+                    <div class="song-image" style="background-image: url('darshan.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Asal Mein</h3>
+                        <p>Darshan Raval</p>
+                        <audio id="darshan2" src="Asal Mein Asal Mein Single 320 Kbps.mp3"></audio>
+                        <button class="play-btn" id="btn-darshan2"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('darshan3')">
+                    <div class="song-image" style="background-image: url('darshan.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Tera Ho Gaya</h3>
+                        <p>Darshan Raval</p>
+                        <audio id="darshan3" src="Tera Ho Gaya_320(PagalWorld.com.sb).mp3"></audio>
+                        <button class="play-btn" id="btn-darshan3"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('darshan4')">
+                    <div class="song-image" style="background-image: url('darshan.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Hawa Banke</h3>
+                        <p>Darshan Raval</p>
+                        <audio id="darshan4" src="Hawa Banke - Darshan Raval-(PagalWorld.Ink).mp3"></audio>
+                        <button class="play-btn" id="btn-darshan4"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Artist 2: Arijit Singh -->
+        <div class="artist-section" id="arijit-singh">
+            <div class="artist-header">
+                <div class="artist-image" style="background-image: url('arijit singh.jpeg');"></div>
+                <div class="artist-info">
+                    <h2>Arijit Singh</h2>
+                    <p class="artist-genre"><i class="fas fa-music"></i> Bollywood, Romantic, Soulful</p>
+                    <p class="artist-description">One of India's most celebrated playback singers, known for his soulful and emotional renditions.</p>
+                    <div class="artist-stats">
+                        <span><i class="fas fa-headphones"></i> 50M+ Listeners</span>
+                        <span><i class="fas fa-heart"></i> 25M+ Likes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="songs-grid">
+                <div class="song-card" onclick="playSong('arijit1')">
+                    <div class="song-image" style="background-image: url('arijit collection.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Qayde Se</h3>
+                        <p>Arijit Singh</p>
+                        <audio id="arijit1" src="arijit collection/Qayde Se - (Raag.Fm).mp3"></audio>
+                        <button class="play-btn" id="btn-arijit1"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('arijit2')">
+                    <div class="song-image" style="background-image: url('arijit collection.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Chahun Main Ya Naa</h3>
+                        <p>Arijit Singh</p>
+                        <audio id="arijit2" src="arijit collection/new_128_03 - Chahun Main Ya Naa - PagalSongs.com.mp3"></audio>
+                        <button class="play-btn" id="btn-arijit2"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('arijit3')">
+                    <div class="song-image" style="background-image: url('arijit collection.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Hardum Humdum</h3>
+                        <p>Arijit Singh</p>
+                        <audio id="arijit3" src="arijit collection/Hardum Humdum - Arijit Singh.mp3"></audio>
+                        <button class="play-btn" id="btn-arijit3"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('arijit4')">
+                    <div class="song-image" style="background-image: url('arijit collection.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Chaleya</h3>
+                        <p>Arijit Singh</p>
+                        <audio id="arijit4" src="arijit collection/Chaleya - Jawan-(DJMaza).mp3"></audio>
+                        <button class="play-btn" id="btn-arijit4"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('arijit5')">
+                    <div class="song-image" style="background-image: url('arijit collection.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Chal Ghar Chalen</h3>
+                        <p>Arijit Singh</p>
+                        <audio id="arijit5" src="arijit collection/01 - Chal Ghar Chalen - DownloadMing.SE.mp3"></audio>
+                        <button class="play-btn" id="btn-arijit5"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('arijit6')">
+                    <div class="song-image" style="background-image: url('arijit collection.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Heeriye</h3>
+                        <p>Arijit Singh</p>
+                        <audio id="arijit6" src="arijit collection/Heeriye Heeriye Aa_320(PaglaSongs) (1).mp3"></audio>
+                        <button class="play-btn" id="btn-arijit6"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('arijit7')">
+                    <div class="song-image" style="background-image: url('arijit collection.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Ishq Mubarak</h3>
+                        <p>Arijit Singh</p>
+                        <audio id="arijit7" src="arijit collection/Ishq Mubarak (Tum Bin 2) 320 Kbps.mp3"></audio>
+                        <button class="play-btn" id="btn-arijit7"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('arijit8')">
+                    <div class="song-image" style="background-image: url('arijit collection.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Kasturi</h3>
+                        <p>Arijit Singh</p>
+                        <audio id="arijit8" src="arijit collection/Kasturi_320(PagalWorld).mp3"></audio>
+                        <button class="play-btn" id="btn-arijit8"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('arijit9')">
+                    <div class="song-image" style="background-image: url('arijit collection.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Main Parwaana</h3>
+                        <p>Arijit Singh</p>
+                        <audio id="arijit9" src="arijit collection/Main Parwaana - Pippa 320 Kbps.mp3"></audio>
+                        <button class="play-btn" id="btn-arijit9"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('arijit10')">
+                    <div class="song-image" style="background-image: url('aabaad barbad.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Aabaad Barbaad</h3>
+                        <p>Arijit Singh</p>
+                        <audio id="arijit10" src="Aabaad Barbaad - Arijit Singh.mp3"></audio>
+                        <button class="play-btn" id="btn-arijit10"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('arijit11')">
+                    <div class="song-image" style="background-image: url('arijit collection.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Aur Mohabbat Kitni Karoon</h3>
+                        <p>Arijit Singh</p>
+                        <audio id="arijit11" src="arijit collection/Aur Mohabbat Kitni Karoon - Metro In Dino 320 Kbps.mp3"></audio>
+                        <button class="play-btn" id="btn-arijit11"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Artist 3: Jubin Nautiyal -->
+        <div class="artist-section" id="jubin-nautiyal">
+            <div class="artist-header">
+                <div class="artist-image" style="background-image: url('jubin nautiyal.jpeg');"></div>
+                <div class="artist-info">
+                    <h2>Jubin Nautiyal</h2>
+                    <p class="artist-genre"><i class="fas fa-music"></i> Bollywood, Pop</p>
+                    <p class="artist-description">Indian playback singer known for his versatile voice and chart-topping romantic songs.</p>
+                    <div class="artist-stats">
+                        <span><i class="fas fa-headphones"></i> 15M+ Listeners</span>
+                        <span><i class="fas fa-heart"></i> 8M+ Likes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="songs-grid">
+                <div class="song-card" onclick="playSong('jubin1')">
+                    <div class="song-image" style="background-image: url('saiyaara.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Saiyaara</h3>
+                        <p>Jubin Nautiyal</p>
+                        <audio id="jubin1" src="Title Track Saiyaara 320 Kbps.mp3"></audio>
+                        <button class="play-btn" id="btn-jubin1"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('jubin2')">
+                    <div class="song-image" style="background-image: url('barbaad.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Barbaad</h3>
+                        <p>Jubin Nautiyal</p>
+                        <audio id="jubin2" src="Barbaad Saiyaara 320 Kbps.mp3"></audio>
+                        <button class="play-btn" id="btn-jubin2"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Artist 4: Anuv Jain -->
+        <div class="artist-section" id="anuv-jain">
+            <div class="artist-header">
+                <div class="artist-image" style="background-image: url('anuv jain.jpeg');"></div>
+                <div class="artist-info">
+                    <h2>Anuv Jain</h2>
+                    <p class="artist-genre"><i class="fas fa-music"></i> Indie, Acoustic</p>
+                    <p class="artist-description">Independent singer-songwriter known for his soothing acoustic melodies and heartfelt lyrics.</p>
+                    <div class="artist-stats">
+                        <span><i class="fas fa-headphones"></i> 8M+ Listeners</span>
+                        <span><i class="fas fa-heart"></i> 4M+ Likes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="songs-grid">
+                <div class="song-card" onclick="playSong('anuv1')">
+                    <div class="song-image" style="background-image: url('anuv jain.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Baarishein</h3>
+                        <p>Anuv Jain</p>
+                        <audio id="anuv1" src="arijit collection/Kasturi_320(PagalWorld).mp3"></audio>
+                        <button class="play-btn" id="btn-anuv1"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('anuv2')">
+                    <div class="song-image" style="background-image: url('anuv jain.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Gul</h3>
+                        <p>Anuv Jain</p>
+                        <audio id="anuv2" src="arijit collection/Main Parwaana - Pippa 320 Kbps.mp3"></audio>
+                        <button class="play-btn" id="btn-anuv2"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Artist 5: Diljit Dosanjh -->
+        <div class="artist-section" id="diljit">
+            <div class="artist-header">
+                <div class="artist-image" style="background-image: url('diljit.jpeg');"></div>
+                <div class="artist-info">
+                    <h2>Diljit Dosanjh</h2>
+                    <p class="artist-genre"><i class="fas fa-music"></i> Punjabi, Bollywood</p>
+                    <p class="artist-description">Punjabi singer, actor, and performer known for his energetic performances and versatile music.</p>
+                    <div class="artist-stats">
+                        <span><i class="fas fa-headphones"></i> 20M+ Listeners</span>
+                        <span><i class="fas fa-heart"></i> 12M+ Likes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="songs-grid">
+                <div class="song-card" onclick="playSong('diljit1')">
+                    <div class="song-image" style="background-image: url('mahiye jinna sohna.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Mahiye Jinna Sohna</h3>
+                        <p>Diljit Dosanjh</p>
+                        <audio id="diljit1" src="Mahiye Jinna Sohna_320(PagalWorld.com.sb).mp3"></audio>
+                        <button class="play-btn" id="btn-diljit1"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+                <div class="song-card" onclick="playSong('diljit2')">
+                    <div class="song-image" style="background-image: url('jhol.jpeg');"></div>
+                    <div class="song-info">
+                        <h3>Jhol</h3>
+                        <p>Diljit Dosanjh</p>
+                        <audio id="diljit2" src="Jhol(KoshalWorld.Com).mp3"></audio>
+                        <button class="play-btn" id="btn-diljit2"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coke Studio Special -->
+        <div class="artist-section" id="coke-studio">
+            <div class="artist-header">
+                <div class="artist-image" style="background-image: url('coke studio.jpeg');"></div>
+                <div class="artist-info">
+                    <h2>Coke Studio Bharat</h2>
+                    <p class="artist-genre"><i class="fas fa-music"></i> Fusion, Indie</p>
+                    <p class="artist-description">A platform showcasing unique collaborations and fusion music from talented Indian artists.</p>
+                    <div class="artist-stats">
+                        <span><i class="fas fa-headphones"></i> 30M+ Listeners</span>
+                        <span><i class="fas fa-heart"></i> 15M+ Likes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="songs-grid">
+                <div class="song-card" onclick="playSong('coke1')">
+                    <div class="song-image" style="background-image: url('Arz Kiya Hai _ Coke Studio.jpg');"></div>
+                    <div class="song-info">
+                        <h3>Arz Kiya Hai</h3>
+                        <p>Coke Studio Bharat</p>
+                        <audio id="coke1" src="Arz Kiya Hai _ Coke Studio Bharat - (Raag.Fm) (1).mp3"></audio>
+                        <button class="play-btn" id="btn-coke1"><i class="fas fa-play"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="trending.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

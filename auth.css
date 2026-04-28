@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #C33764;
+    background: -webkit-linear-gradient(to right, #1D2671, #C33764);
+    background: linear-gradient(to right, #1D2671, #C33764);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-box {
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background-image: url("Gemini_Generated_Image_ws1ceaws1ceaws1c-removebg-preview.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.logo-section h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.logo-section p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group label i {
+    color: rgb(13, 118, 199);
+}
+
+.form-group input {
+    padding: 12px 15px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: rgb(13, 118, 199);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.remember-me span a {
+    color: rgb(13, 118, 199);
+    text-decoration: none;
+}
+
+.remember-me span a:hover {
+    text-decoration: underline;
+}
+
+.forgot-password {
+    color: rgb(13, 118, 199);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.auth-btn {
+    padding: 14px;
+    background: rgb(13, 118, 199);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.auth-btn:hover {
+    background: rgb(10, 95, 160);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(13, 118, 199, 0.4);
+}
+
+.auth-btn:active {
+    transform: translateY(0);
+}
+
+.divider {
+    text-align: center;
+    position: relative;
+    margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.divider span {
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.85);
+    padding: 0 10px;
+    font-size: 0.9rem;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-btn {
+    padding: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.google-btn:hover {
+    border-color: #DB4437;
+}
+
+.facebook-btn:hover {
+    border-color: #4267B2;
+}
+
+.switch-auth {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.switch-auth p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+}
+
+.switch-auth a {
+    color: rgb(13, 118, 199);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.switch-auth a:hover {
+    text-decoration: underline;
+}
+
+/* Password Input with Toggle */
+.password-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input input {
+    padding-right: 45px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: rgb(13, 118, 199);
+}
+
+.toggle-password i {
+    pointer-events: none;
+}
+
+/* Form Hints */
+.form-hint {
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+    margin-top: 5px;
+}
+
+/* Message Box */
+.message-box {
+    display: none;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    text-align: center;
+    animation: slideIn 0.3s ease;
+}
+
+.message-box.success {
+    background: rgba(76, 175, 80, 0.2);
+    border: 1px solid #4CAF50;
+    color: #4CAF50;
+}
+
+.message-box.error {
+    background: rgba(244, 67, 54, 0.2);
+    border: 1px solid #f44336;
+    color: #f44336;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .auth-box {
+        padding: 30px 20px;
+    }
+
+    .logo-section h1 {
+        font-size: 1.6rem;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Music Vibe</title>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .rating-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .stars {
+            display: flex;
+            gap: 10px;
+            font-size: 2rem;
+        }
+
+        .stars i {
+            color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .stars i:hover,
+        .stars i.active {
+            color: #FFD700;
+            transform: scale(1.2);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container" style="max-width: 600px;">
+        <div class="auth-box">
+            <div class="logo-section">
+                <div class="auth-logo"></div>
+                <h1>We Value Your Feedback</h1>
+                <p>Help us improve your music experience</p>
+            </div>
+            
+            <form id="feedbackForm" class="auth-form">
+                <div class="form-group">
+                    <label for="name">
+                        <i class="fas fa-user"></i>
+                        Your Name
+                    </label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i>
+                        Email Address
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">
+                        <i class="fas fa-tag"></i>
+                        Subject
+                    </label>
+                    <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+                </div>
+
+                <div class="form-group rating-group">
+                    <label>
+                        <i class="fas fa-star"></i>
+                        Rate Your Experience
+                    </label>
+                    <div class="stars" id="ratingStars">
+                        <i class="fas fa-star" data-rating="1"></i>
+                        <i class="fas fa-star" data-rating="2"></i>
+                        <i class="fas fa-star" data-rating="3"></i>
+                        <i class="fas fa-star" data-rating="4"></i>
+                        <i class="fas fa-star" data-rating="5"></i>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" value="0">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">
+                        <i class="fas fa-comment"></i>
+                        Your Message
+                    </label>
+                    <textarea id="message" name="message" placeholder="Tell us what you think..." required></textarea>
+                </div>
+                
+                <button type="submit" class="auth-btn">
+                    <i class="fas fa-paper-plane"></i> Submit Feedback
+                </button>
+                
+                <div class="switch-auth">
+                    <p><a href="index.html">← Back to Home</a></p>
+                </div>
+            </form>
+            
+            <div id="messageBox" class="message-box"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Rating stars functionality
+        const stars = document.querySelectorAll('.stars i');
+        const ratingInput = document.getElementById('rating');
+        let selectedRating = 0;
+
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                selectedRating = parseInt(this.getAttribute('data-rating'));
+                ratingInput.value = selectedRating;
+                updateStars();
+            });
+
+            star.addEventListener('mouseenter', function() {
+                const hoverRating = parseInt(this.getAttribute('data-rating'));
+                highlightStars(hoverRating);
+            });
+        });
+
+        document.querySelector('.stars').addEventListener('mouseleave', function() {
+            updateStars();
+        });
+
+        function highlightStars(rating) {
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        function updateStars() {
+            highlightStars(selectedRating);
+        }
+
+        // Auto-fill if user is logged in
+        window.addEventListener('DOMContentLoaded', () => {
+            const userStr = localStorage.getItem('jamifyUser') || sessionStorage.getItem('jamifyUser');
+            if (userStr) {
+                try {
+                    const user = JSON.parse(userStr);
+                    document.getElementById('name').value = user.fullName || user.username || '';
+                    document.getElementById('email').value = user.email || '';
+                } catch (e) {
+                    console.error('Error parsing user data:', e);
+                }
+            }
+        });
+
+        // Handle feedback form submission
+        document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            const rating = parseInt(document.getElementById('rating').value);
+
+            if (rating === 0) {
+                showMessage('❌ Please select a rating', 'error');
+                return;
+            }
+
+            // Get user ID if logged in
+            let userId = null;
+            const userStr = localStorage.getItem('jamifyUser') || sessionStorage.getItem('jamifyUser');
+            if (userStr) {
+                try {
+                    const user = JSON.parse(userStr);
+                    userId = user.id;
+                } catch (e) {}
+            }
+
+            try {
+                const response = await fetch('http://localhost:3000/api/feedback', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, email, subject, message, rating, userId })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage('✅ Thank you for your feedback!', 'success');
+                    document.getElementById('feedbackForm').reset();
+                    selectedRating = 0;
+                    updateStars();
+                } else {
+                    showMessage('❌ ' + (data.message || 'Failed to submit feedback'), 'error');
+                }
+            } catch (error) {
+                showMessage('❌ Server error. Please make sure the server is running (npm start)', 'error');
+                console.error('Feedback error:', error);
+            }
+        });
+
+        function showMessage(message, type) {
+            const messageBox = document.getElementById('messageBox');
+            messageBox.textContent = message;
+            messageBox.className = `message-box ${type}`;
+            messageBox.style.display = 'block';
+            
+            setTimeout(() => {
+                messageBox.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
+

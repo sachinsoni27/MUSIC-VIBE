@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Vibe - Your Music Destination</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo"></div>
+        <div class="nav-links">
+            <a id="links" href="index.html">Home</a>
+            <a id="links" href="#playlists">Playlists</a>
+            <a id="links" href="trending.html">Trending</a>
+            <a id="links" href="feedback.html">Feedback</a>
+            <a id="links" href="about.html">About</a>
+            <a id="links" href="contact.html">Contact</a>
+            <span id="userSection">
+                <a id="links" href="login.html">Login</a>
+                <a id="links" href="signup.html">Sign Up</a>
+            </span>
+        </div>
+    </nav>
+        <div class="container1">
+            <div class="bg-video">
+                <video src="Music_Website_Intro_Video_Creation.mp4" autoplay muted loop></video>
+            </div>
+            <div class="hero-content">
+                <div class="logo">
+                    <div class="jamify-logo"></div>
+                </div>
+                
+                <div class="song-buttons">
+                    <button id="start-btn" onclick="window.location.href='trending.html'">
+                        <i class="fas fa-play"></i> Start Listening
+                    </button>
+                    <button id="explore-btn" onclick="window.location.href='trending.html'">
+                        <i class="fas fa-compass"></i> Explore
+                    </button>
+                </div>
+               
+            </div>
+        </div>
+            <!-- Music Player -->
+            <div class="musicplayer" id="musicPlayer">
+                <div class="played-songs">
+                    <div class="player-thumbnail" id="playerThumbnail"></div>
+                    <div class="song-details">
+                        <p class="song-title" id="currentSongTitle">No song playing</p>
+                        <p class="song-artist" id="currentSongArtist">Select a song to play</p>
+                    </div>
+                </div>
+                <div class="song-controls">
+                    <div class="liked">
+                        <i class="fa-solid fa-heart" id="likeBtn"></i>
+                    </div>
+                    <div class="controls">
+                        <div class="player_controls">
+                            <button class="control-btn" id="prevBtn"><i class="fa-solid fa-backward-step"></i></button>
+                            <button class="control-btn play-pause-btn" id="playPauseBtn"><i class="fa-solid fa-play"></i></button>
+                            <button class="control-btn" id="nextBtn"><i class="fa-solid fa-forward-step"></i></button>
+                        </div>
+                        <div class="progress-section">
+                            <span class="time-current" id="currentTime">0:00</span>
+                            <div class="progress-container" id="progressContainer">
+                                <div id="progress-bar"></div>
+                            </div>
+                            <span class="time-total" id="totalTime">0:00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="speaker">
+                    <div class="volume-icon" id="volumeIcon"><i class="fa-solid fa-volume-high"></i></div>
+                    <input type="range" name="volume" id="volumeSlider" min="0" max="100" value="70">
+                    <div class="extra-controls">
+                        <button class="control-btn" id="shuffleBtn"><i class="fa-solid fa-shuffle"></i></button>
+                        <button class="control-btn" id="repeatBtn"><i class="fa-solid fa-repeat"></i></button>
+                    </div>
+                </div>
+                <audio id="mainAudioPlayer"></audio>
+            </div>
+
+            <!--  Artist recommended Songs-->
+            <!-- <div class="container2">
+                <h2  style="font-size: 3rem; padding-left: 10px; color: #fff;">Trending Artists</h2>
+                <div class="Artist-contain">
+                    <div class="Artists">
+                        <div id="Singer1" class="singer"></div>
+                        <div id="Singer2"class="singer"></div>
+                        <div id="Singer3"class="singer"></div>
+                        <div id="Singer4"class="singer"></div>
+                        <div id="Singer5"class="singer"></div>
+                    </div>
+                    <div class="Artists-recomm1">
+                        <div class="artist1_Recomm">
+                            <div class="left_recom">
+                                <div class="recom" id="recom1">
+                                    <h3>Baarishon mein</h3>
+                                </div>
+                                <div class="recom" id="recom2">
+                                    <h3>Asal Mein</h3>
+                                </div>
+                                <div class="recom" id="recom3">
+                                    <h3>Tera Ho Gaya</h3>
+                                </div>
+                                <div class="recom" id="recom4">
+                                    <h3>Nafrat</h3>
+                                </div>
+                                <div class="recom" id="recom5">
+                                    <h3>Hawa Banke</h3>
+                                </div>
+                            </div>
+                            <div class="right_recom">
+                                <div class="recom" id="recom6">
+                                    <h3>Batao Zara</h3>
+                                </div>
+                                <div class="recom" id="recom7">
+                                    <h3>Saari Ki Saari</h3>
+                                </div>
+                                <div class="recom" id="recom8">
+                                    <h3>Saahiba</h3>
+                                </div>
+                                <div class="recom" id="recom9">
+                                    <h3>Dil Mera Blast</h3>
+                                </div>
+                                <div class="recom" id="recom10">
+                                    <h3>Dil Julaha</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="Artists-recomm2">
+                            <div class="artist2_Recomm">
+                            <div class="left_recom">
+                                <div class="recom" id="PlaylistSong1">
+                                    <h3>Qayde Se</h3>
+                                    <audio src="/arijit collection/Qayde Se - (Raag.Fm).mp3" controls id="recom1"></audio>
+                                </div>
+                                <div class="recom" >
+                                    <h3>Chahun Main Ya Naa</h3>
+                                    <audio src="/arijit collection/new_128_03 - Chahun Main Ya Naa - PagalSongs.com.mp3" controls id="recom2"></audio>
+                                </div>
+                                <div class="recom">
+                                    <h3>Hardum Humdum</h3>
+                                    <audio src="/arijit collection/Hardum Humdum - Arijit Singh.mp3" controls id="recom3"></audio>
+                                </div>
+                                <div class="recom" >
+                                    <h3>Aur Mohbbat Kitni karoon</h3>
+                                    <audio src="arijit collection/Aur Mohabbat Kitni Karoon - Metro In Dino 320 Kbps.mp3" controls id="recom4"></audio>
+                                </div>
+                                <div class="recom">
+                                    <h3>Chaleya</h3>
+                                    <audio src="/arijit collection/Chaleya - Jawan-(DJMaza).mp3"controls id="recom5"></audio>
+                                </div>
+                            </div>
+                            <div class="right_recom">
+                                <div class="recom" >
+                                    <h3>Chal Ghar Chalen</h3>
+                                    <audio src="/arijit collection/01 - Chal Ghar Chalen - DownloadMing.SE.mp3" controls id="recom6"></audio>
+                                </div>
+                                <div class="recom" >
+                                    <h3>Heeriye Heeriye</h3>
+                                    <audio src="/arijit collection/Heeriye Heeriye Aa_320(PaglaSongs) (1).mp3" controls id="recom7"></audio>
+                                </div>
+                                <div class="recom" id="recom8">
+                                    <h3>Ishq Mubaraak</h3>
+                                </div>
+                                <div class="recom" id="recom9">
+                                    <h3>Kasturi</h3>
+                                </div>
+                                <div class="recom" id="recom10">
+                                    <h3>Main Parwana</h3>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="artist3_Recomm"></div>
+                        <div class="artist4_Recomm"></div>
+                        <div class="artist5_Recomm"></div>
+                </div>
+            </div> -->
+
+            <!-- My Playlists Section -->
+            <div class="container-playlist" id="playlists">
+                <div class="playlist-header">
+                    <h2><i class="fas fa-list"></i> My Playlists</h2>
+                    <button class="create-playlist-btn" id="createPlaylistBtn">
+                        <i class="fas fa-plus"></i> Create Playlist
+                    </button>
+                </div>
+
+                <div class="playlists-grid" id="playlistsGrid">
+                    <!-- Playlists will be dynamically added here -->
+                    <div class="empty-playlist-message" id="emptyPlaylistMessage">
+                        <i class="fas fa-music"></i>
+                        <p>No playlists yet. Create your first playlist!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container3">
+               <div class="suggested-songs">
+                <h2 id="trending" ><span>Trending Artists</span></h2>
+            <div class="artist-sec">
+                <div class="artist-contain" >
+                    <div class="artist-card1" #id="suggest-artist"></div>
+                    <h3>Darshan Raval</h3>
+                </div>
+            
+                <div class="artist-contain">
+                    <div class="artist-card2"#id="suggest-artist"></div>
+                    <h3>Arijit Singh</h3>
+                </div>
+                <div class="artist-contain">
+                    <div class="artist-card3"#id="suggest-artist"></div>
+                    <h3>Jubin Nautiyal</h3>
+                </div>
+                <div class="artist-contain">
+                    <div class="artist-card4"#id="suggest-artist"></div>
+                    <h3>Gajendra Verma</h3>
+                </div>    
+                <div class="artist-contain">
+                    <div class="artist-card5"#id="suggest-artist"></div>
+                    <h3>Anuv Jain</h3>
+                </div>
+               
+            </div>
+            <div class="songs-sec">
+                  <div class="songs-contain">
+                    <audio id="Arzkiya" src="Arz Kiya Hai _ Coke Studio Bharat - (Raag.Fm) (1).mp3"></audio>
+                    <div class="songs-card1" id="suggest-song" onclick="playFromCard('Arz Kiya Hai _ Coke Studio Bharat - (Raag.Fm) (1).mp3', 'Arz Kiya Hai', 'Coke Studio', 'Arz Kiya Hai _ Coke Studio.jpg')">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="song-card-info">
+                        <h3>Arz Kiya Hai</h3>
+                        <p class="artist-name">Coke Studio</p>
+                    </div>
+                    <button class="add-to-playlist-btn" onclick="event.stopPropagation(); openAddToPlaylist('Arz Kiya Hai _ Coke Studio Bharat - (Raag.Fm) (1).mp3', 'Arz Kiya Hai', 'Coke Studio', 'Arz Kiya Hai _ Coke Studio.jpg')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="songs-contain">
+                    <audio id="Jhol" src="Jhol(KoshalWorld.Com).mp3"></audio>
+                    <div class="songs-card2" id="suggest-song" onclick="playFromCard('Jhol(KoshalWorld.Com).mp3', 'Jhol', 'Diljit Dosanjh', 'jhol.jpeg')">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="song-card-info">
+                        <h3>Jhol</h3>
+                        <p class="artist-name">Diljit Dosanjh</p>
+                    </div>
+                    <button class="add-to-playlist-btn" onclick="event.stopPropagation(); openAddToPlaylist('Jhol(KoshalWorld.Com).mp3', 'Jhol', 'Diljit Dosanjh', 'jhol.jpeg')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="songs-contain">
+                    <audio id="Mahiye-Jinna-Sohna" src="Mahiye Jinna Sohna_320(PagalWorld.com.sb).mp3"></audio>
+                    <div class="songs-card3" id="suggest-song" onclick="playFromCard('Mahiye Jinna Sohna_320(PagalWorld.com.sb).mp3', 'Mahiye Jinna Sohna', 'Diljit Dosanjh', 'mahiye jinna sohna.jpeg')">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="song-card-info">
+                        <h3>Mahiye Jinna Sohna</h3>
+                        <p class="artist-name">Diljit Dosanjh</p>
+                    </div>
+                    <button class="add-to-playlist-btn" onclick="event.stopPropagation(); openAddToPlaylist('Mahiye Jinna Sohna_320(PagalWorld.com.sb).mp3', 'Mahiye Jinna Sohna', 'Diljit Dosanjh', 'mahiye jinna sohna.jpeg')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="songs-contain">
+                    <audio id="Barbaad" src="Barbaad Saiyaara 320 Kbps.mp3"></audio>
+                    <div class="songs-card4" id="suggest-song" onclick="playFromCard('Barbaad Saiyaara 320 Kbps.mp3', 'Barbaad', 'Jubin Nautiyal', 'barbaad.jpeg')">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="song-card-info">
+                        <h3>Barbaad</h3>
+                        <p class="artist-name">Jubin Nautiyal</p>
+                    </div>
+                    <button class="add-to-playlist-btn" onclick="event.stopPropagation(); openAddToPlaylist('Barbaad Saiyaara 320 Kbps.mp3', 'Barbaad', 'Jubin Nautiyal', 'barbaad.jpeg')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="songs-contain">
+                    <audio id="Barbaad_aabaad" src="Aabaad Barbaad - Arijit Singh.mp3"></audio>
+                    <div class="songs-card5" id="suggest-song" onclick="playFromCard('Aabaad Barbaad - Arijit Singh.mp3', 'Aabaad Barbaad', 'Arijit Singh', 'aabaad barbad.jpeg')">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="song-card-info">
+                        <h3>Aabaad Barbaad</h3>
+                        <p class="artist-name">Arijit Singh</p>
+                    </div>
+                    <button class="add-to-playlist-btn" onclick="event.stopPropagation(); openAddToPlaylist('Aabaad Barbaad - Arijit Singh.mp3', 'Aabaad Barbaad', 'Arijit Singh', 'aabaad barbad.jpeg')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                 <div class="songs-contain">
+                    <audio id="Saiyaara" src="Title Track Saiyaara 320 Kbps.mp3"></audio>
+                    <div class="songs-card6" id="suggest-song" onclick="playFromCard('Title Track Saiyaara 320 Kbps.mp3', 'Saiyaara', 'Jubin Nautiyal', 'saiyaara.jpeg')">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="song-card-info">
+                        <h3>Saiyaara</h3>
+                        <p class="artist-name">Jubin Nautiyal</p>
+                    </div>
+                    <button class="add-to-playlist-btn" onclick="event.stopPropagation(); openAddToPlaylist('Title Track Saiyaara 320 Kbps.mp3', 'Saiyaara', 'Jubin Nautiyal', 'saiyaara.jpeg')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>  
+        <footer class="footer">
+    <div class="footer-container">
+      
+      
+      <div class="footer-section social">
+        <h3>FOLLOW US </h3>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+
+      
+      <div class="footer-section company">
+        <h3>MUSIC VIBE</h3>
+        <p>Bringing you the best music experience worldwide.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+      </div>
+
+      
+      <div class="footer-section links">
+        <h3>USEFUL LINKS</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Playlists</a></li>
+          <li><a href="#">Top Charts</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      
+      <div class="footer-section-contact">
+        <h3 id="contact">CONTACT US</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Music Street, Delhi</p>
+        <p><i class="fas fa-phone"></i> +91 9936503035</p>
+        <p><i class="fas fa-envelope"></i> support@musicvibe.com</p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Music Vibe. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+        <!-- Create Playlist Modal -->
+        <div class="modal" id="createPlaylistModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2><i class="fas fa-list"></i> Create New Playlist</h2>
+                    <span class="close-modal" id="closeCreateModal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="playlistNameInput" placeholder="Enter playlist name..." maxlength="50">
+                    <textarea id="playlistDescInput" placeholder="Add a description (optional)..." rows="3" maxlength="200"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-cancel" id="cancelCreateBtn">Cancel</button>
+                    <button class="btn-create" id="confirmCreateBtn">Create</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add to Playlist Modal -->
+        <div class="modal" id="addToPlaylistModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2><i class="fas fa-plus-circle"></i> Add to Playlist</h2>
+                    <span class="close-modal" id="closeAddModal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="song-to-add" id="songToAddInfo">
+                        <!-- Song info will be displayed here -->
+                    </div>
+                    <div class="playlist-selection" id="playlistSelection">
+                        <!-- Available playlists will be listed here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-cancel" id="cancelAddBtn">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Playlist Details Modal -->
+        <div class="modal" id="playlistDetailsModal">
+            <div class="modal-content modal-large">
+                <div class="modal-header">
+                    <h2 id="playlistDetailsTitle"><i class="fas fa-list"></i> Playlist</h2>
+                    <span class="close-modal" id="closeDetailsModal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="playlist-info" id="playlistInfo">
+                        <!-- Playlist description -->
+                    </div>
+                    <div class="playlist-songs" id="playlistSongsList">
+                        <!-- Songs in playlist will be listed here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-delete" id="deletePlaylistBtn">
+                        <i class="fas fa-trash"></i> Delete Playlist
+                    </button>
+                    <button class="btn-cancel" id="closePlaylistDetailsBtn">Close</button>
+                </div>
+            </div>
+        </div>
+
+
+
+    <!-- User Authentication Check -->
+    <script>
+        // Check if user is logged in
+        window.addEventListener('DOMContentLoaded', () => {
+            const userStr = localStorage.getItem('jamifyUser') || sessionStorage.getItem('jamifyUser');
+            const sessionToken = localStorage.getItem('jamifySession') || sessionStorage.getItem('jamifySession');
+
+            if (userStr && sessionToken) {
+                try {
+                    const user = JSON.parse(userStr);
+                    const userSection = document.getElementById('userSection');
+
+                    if (userSection) {
+                        userSection.innerHTML = `
+                            <span style="color: rgb(13, 118, 199); margin-right: 10px;">
+                                <i class="fas fa-user-circle"></i> ${user.username}
+                            </span>
+                            <a id="links" href="#" onclick="logout(); return false;">Logout</a>
+                        `;
+                    }
+                } catch (e) {
+                    console.error('Error parsing user data:', e);
+                }
+            }
+        });
+
+        async function logout() {
+            const sessionToken = localStorage.getItem('jamifySession') || sessionStorage.getItem('jamifySession');
+
+            try {
+                await fetch('http://localhost:3000/api/auth/logout', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ sessionToken })
+                });
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+
+            // Clear local storage
+            localStorage.removeItem('jamifySession');
+            localStorage.removeItem('jamifyUser');
+            sessionStorage.removeItem('jamifySession');
+            sessionStorage.removeItem('jamifyUser');
+
+            // Redirect to home
+            window.location.reload();
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+</html>

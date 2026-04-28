@@ -1,0 +1,214 @@
+/* =============================================
+   MUSIC VIBE — Navbar
+   ============================================= */
+@import './design-tokens.css';
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-h);
+  width: 100%;
+  position: fixed;
+  top: 0; left: 0;
+  background: rgba(8,8,15,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  z-index: 1000;
+  transition: background var(--t);
+}
+/* Removed body.server-down nav top offset as the server banner is now at the bottom */
+
+/* Logo */
+nav .logo { display:flex; align-items:center; gap:10px; cursor:pointer; flex-shrink:0; }
+nav .logo:hover { transform:none; }
+
+.logo-icon {
+  width: 34px; height:34px;
+  background: var(--gradient);
+  border-radius: 10px;
+  display: flex; align-items:center; justify-content:center;
+  font-size: 1rem; color:#fff;
+  box-shadow: var(--shadow-accent);
+  flex-shrink:0;
+}
+
+.brand-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.3px;
+  margin:0;
+}
+
+/* Nav links */
+nav .nav-links {
+  display:flex; align-items:center; gap:4px;
+  margin-left:auto;
+}
+
+nav .nav-link {
+  padding: 8px 16px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: var(--r-sm);
+  transition: all var(--t);
+  white-space:nowrap;
+}
+
+nav .nav-link:hover,
+nav .nav-link.active {
+  color: var(--text);
+  background: var(--card-hover);
+}
+
+nav .nav-link.active {
+  color: var(--accent-light);
+}
+
+/* Auth area */
+nav #userSection { display:flex; align-items:center; gap:8px; margin-left:8px; }
+nav #userSection .auth-clerk { display:flex; align-items:center; gap:6px; }
+
+nav #userSection .clerk-btn button {
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--r-sm);
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all var(--t);
+  font-family: 'Inter', sans-serif;
+}
+
+nav #userSection .clerk-btn button:hover {
+  color: var(--text);
+  background: var(--card-hover);
+}
+
+nav #userSection .signup-link {
+  display: inline-block;
+  padding: 8px 18px;
+  background: var(--gradient);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--r-pill);
+  box-shadow: var(--shadow-accent);
+  transition: all var(--t);
+}
+
+nav #userSection .signup-link:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 32px var(--accent-glow);
+}
+
+/* Server banner */
+.server-banner {
+  position: fixed;
+  bottom: calc(var(--player-h) + 16px); right: 16px;
+  z-index: 9999;
+  background: rgba(20,10,5,0.95);
+  border: 1px solid rgba(245,158,11,0.4);
+  border-radius: var(--r-md);
+  padding: 10px 14px;
+  max-width: 340px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  font-size: 0.82rem;
+  color: #fcd34d;
+  animation: fadeInDown 0.4s ease;
+}
+
+/* Removed conflicting top rule to prevent vertical stretching */
+/* body.server-down .server-banner { top:12px; } */
+
+.server-banner-inner {
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+}
+
+.server-banner code {
+  background: rgba(255,255,255,0.1);
+  padding: 1px 5px;
+  border-radius:4px;
+  font-size: 0.78rem;
+}
+
+.server-banner-actions { margin-top:6px; }
+
+.server-banner .auth-btn.small {
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  background: rgba(245,158,11,0.2);
+  color: #fcd34d;
+  border: 1px solid rgba(245,158,11,0.4);
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all var(--t);
+}
+
+.server-banner .auth-btn.small:hover { background:rgba(245,158,11,0.35); }
+
+.server-banner-message {
+  margin-top:6px;
+  font-size:0.78rem;
+  color: var(--text-muted);
+}
+
+.server-banner a { color:#93c5fd; text-decoration:underline; }
+
+/* =============================================
+   RESPONSIVE — Navbar
+   ============================================= */
+
+/* Tablet (max 1024px) */
+@media (max-width: 1024px) {
+  nav { padding: 0 20px; }
+  nav .nav-link { padding: 7px 12px; font-size: 0.88rem; }
+}
+
+/* Small tablet (max 768px) */
+@media (max-width: 768px) {
+  nav { padding: 0 16px; }
+  nav .nav-links { gap: 2px; }
+  nav .nav-link { padding: 7px 10px; font-size: 0.82rem; }
+  .brand-title { font-size: 1rem; }
+  nav #userSection .signup-link { padding: 7px 14px; font-size: 0.82rem; }
+}
+
+/* Mobile (max 600px) */
+@media (max-width: 600px) {
+  nav { padding: 0 12px; }
+  nav .nav-link { padding: 6px 8px; font-size: 0.78rem; }
+  .logo-icon { width: 28px; height: 28px; font-size: 0.85rem; }
+  .brand-title { font-size: 0.9rem; }
+  nav #userSection { gap: 4px; margin-left: 4px; }
+  nav #userSection .signup-link { padding: 6px 12px; font-size: 0.78rem; }
+}
+
+/* Mobile (max 480px) — hide less important nav items */
+@media (max-width: 480px) {
+  nav .nav-links {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+  nav .nav-links::-webkit-scrollbar { display: none; }
+  nav .nav-link { padding: 6px 10px; font-size: 0.78rem; white-space: nowrap; }
+  .brand-title { display: none; }
+}
+
+/* Very small mobile (max 360px) */
+@media (max-width: 360px) {
+  nav { padding: 0 8px; }
+  nav .nav-link { padding: 5px 8px; font-size: 0.74rem; }
+  nav #userSection .signup-link { padding: 5px 10px; font-size: 0.74rem; }
+}
+

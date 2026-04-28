@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Test - Music Vibe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: rgb(13, 118, 199);
+        }
+
+        .test-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .test-section h2 {
+            color: rgb(13, 118, 199);
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, rgb(13, 118, 199), rgb(10, 95, 160));
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 10px 10px 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(13, 118, 199, 0.5);
+        }
+
+        .result {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .success {
+            color: #4CAF50;
+        }
+
+        .error {
+            color: #f44336;
+        }
+
+        .info {
+            color: rgb(13, 118, 199);
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        .status.online {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4CAF50;
+        }
+
+        .status.offline {
+            background: rgba(244, 67, 54, 0.2);
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-database"></i> Music Vibe Database Test Suite</h1>
+
+        <div class="test-section">
+            <h2>
+                <i class="fas fa-server"></i> Server Status
+                <span id="serverStatus" class="status offline">Offline</span>
+            </h2>
+            <button onclick="checkServer()">Check Server</button>
+            <div id="serverResult" class="result" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h2><i class="fas fa-user-plus"></i> Test Registration</h2>
+            <button onclick="testRegister()">Create Test User</button>
+            <div id="registerResult" class="result" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h2><i class="fas fa-sign-in-alt"></i> Test Login</h2>
+            <button onclick="testLogin()">Login Test User</button>
+            <div id="loginResult" class="result" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h2><i class="fas fa-comment"></i> Test Feedback</h2>
+            <button onclick="testFeedback()">Submit Test Feedback</button>
+            <button onclick="getFeedback()">Get All Feedback</button>
+            <div id="feedbackResult" class="result" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h2><i class="fas fa-info-circle"></i> Quick Links</h2>
+            <button onclick="window.location.href='signup.html'">Go to Signup</button>
+            <button onclick="window.location.href='login.html'">Go to Login</button>
+            <button onclick="window.location.href='feedback.html'">Go to Feedback</button>
+            <button onclick="window.location.href='admin-feedback.html'">Admin Dashboard</button>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:3000';
+
+        async function checkServer() {
+            const result = document.getElementById('serverResult');
+            const status = document.getElementById('serverStatus');
+            result.style.display = 'block';
+            result.innerHTML = '<span class="info">Checking server...</span>';
+
+            try {
+                const response = await fetch(`${API_URL}/api/feedback`);
+                if (response.ok) {
+                    result.innerHTML = '<span class="success">✅ Server is running!</span>';
+                    status.className = 'status online';
+                    status.textContent = 'Online';
+                } else {
+                    throw new Error('Server responded with error');
+                }
+            } catch (error) {
+                result.innerHTML = '<span class="error">❌ Server is not running. Please run: npm start</span>';
+                status.className = 'status offline';
+                status.textContent = 'Offline';
+            }
+        }
+
+        async function testRegister() {
+            const result = document.getElementById('registerResult');
+            result.style.display = 'block';
+            result.innerHTML = '<span class="info">Creating test user...</span>';
+
+            const testUser = {
+                username: 'testuser_' + Date.now(),
+                email: `test${Date.now()}@musicvibe.com`,
+            };
+
+            try {
+                const response = await fetch(`${API_URL}/api/auth/register`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(testUser)
+                });
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    result.innerHTML = `
+                        <span class="success">✅ Registration successful!</span><br>
+                        Username: ${testUser.username}<br>
+                        Email: ${testUser.email}<br>
+                        Password: ${testUser.password}<br>
+                        User ID: ${data.userId}
+                    `;
+                } else {
+                    result.innerHTML = `<span class="error">❌ ${data.message}</span>`;
+                }
+            } catch (error) {
+                result.innerHTML = `<span class="error">❌ Error: ${error.message}</span>`;
+            }
+        }
+
+        async function testLogin() {
+            const result = document.getElementById('loginResult');
+            result.style.display = 'block';
+            result.innerHTML = '<span class="info">Testing login...</span>';
+
+            try {
+                const response = await fetch(`${API_URL}/api/auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        username: 'testuser',
+                        password: 'test123'
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    result.innerHTML = `
+                        <span class="success">✅ Login successful!</span><br>
+                        User: ${data.user.username}<br>
+                        Email: ${data.user.email}<br>
+                        Session Token: ${data.sessionToken.substring(0, 20)}...
+                    `;
+                } else {
+                    result.innerHTML = `<span class="error">❌ ${data.message}</span><br>
+                        <small>Try creating a test user first, or use credentials from registration test</small>`;
+                }
+            } catch (error) {
+                result.innerHTML = `<span class="error">❌ Error: ${error.message}</span>`;
+            }
+        }
+
+        async function testFeedback() {
+            const result = document.getElementById('feedbackResult');
+            result.style.display = 'block';
+            result.innerHTML = '<span class="info">Submitting test feedback...</span>';
+
+            const testFeedback = {
+                name: 'Test User',
+                email: 'test@musicvibe.com',
+                subject: 'Test Feedback',
+                message: 'This is a test feedback message from the test suite.',
+                rating: 5
+            };
+
+            try {
+                const response = await fetch(`${API_URL}/api/feedback`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(testFeedback)
+                });
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    result.innerHTML = `
+                        <span class="success">✅ Feedback submitted!</span><br>
+                        Feedback ID: ${data.feedbackId}
+                    `;
+                } else {
+                    result.innerHTML = `<span class="error">❌ ${data.message}</span>`;
+                }
+            } catch (error) {
+                result.innerHTML = `<span class="error">❌ Error: ${error.message}</span>`;
+            }
+        }
+
+        async function getFeedback() {
+            const result = document.getElementById('feedbackResult');
+            result.style.display = 'block';
+            result.innerHTML = '<span class="info">Fetching feedback...</span>';
+
+            try {
+                const response = await fetch(`${API_URL}/api/feedback`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    result.innerHTML = `
+                        <span class="success">✅ Found ${data.feedback.length} feedback entries</span><br>
+                        <pre>${JSON.stringify(data.feedback, null, 2)}</pre>
+                    `;
+                } else {
+                    result.innerHTML = `<span class="error">❌ ${data.message}</span>`;
+                }
+            } catch (error) {
+                result.innerHTML = `<span class="error">❌ Error: ${error.message}</span>`;
+            }
+        }
+
+        // Check server on load
+        window.addEventListener('DOMContentLoaded', checkServer);
+    </script>
+</body>
+</html>
+
