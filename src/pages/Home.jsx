@@ -30,8 +30,8 @@ const Home = () => {
 
           {/* Logo icon */}
           <div className="hero-logo">
-            <div className="jamify-logo">
-              <i className="fas fa-music" />
+            <div className="jamify-logo" style={{ background: 'transparent', boxShadow: 'none' }}>
+              <img src="/logo.png" alt="Music Vibe" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
           </div>
 

@@ -1,3 +1,8 @@
+process.env.NODE_ENV = 'test'
+// reduce resend cooldown for tests so we can resend immediately
+process.env.OTP_RESEND_COOLDOWN = '0'
+process.env.OTP_MAX_RESEND = '10'
+
 const request = require('supertest')
 const mongoose = require('mongoose')
 const { MongoMemoryServer } = require('mongodb-memory-server')
@@ -9,10 +14,6 @@ jest.setTimeout(30000)
 let mongo
 
 beforeAll(async () => {
-  process.env.NODE_ENV = 'test'
-  // reduce resend cooldown for tests so we can resend immediately
-  process.env.OTP_RESEND_COOLDOWN = '0'
-  process.env.OTP_MAX_RESEND = '10'
   mongo = await MongoMemoryServer.create()
   const uri = mongo.getUri()
   await startDb(uri)

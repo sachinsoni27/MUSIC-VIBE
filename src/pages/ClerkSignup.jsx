@@ -39,8 +39,8 @@ const ClerkSignup = () => {
         <div className="glass" style={{ maxWidth: '480px', width: '100%', padding: '40px', position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           
           <div className="section-header" style={{ marginBottom: '32px', textAlign: 'center' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: 'var(--gradient)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem', color: '#fff', margin: '0 auto 20px', boxShadow: 'var(--shadow-accent)' }}>
-              <i className="fas fa-music"></i>
+            <div style={{ width: '64px', height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
+              <img src="/logo.png" alt="Music Vibe" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
             <h1 className="section-title" style={{ fontSize: '1.8rem', justifyContent: 'center' }}>Join Music Vibe</h1>
             <p className="section-subtitle">Create your account to start streaming</p>

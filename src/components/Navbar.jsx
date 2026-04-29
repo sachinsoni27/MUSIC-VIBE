@@ -23,8 +23,8 @@ const Navbar = () => {
     <nav>
       <div className="logo">
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-          <div className="logo-icon">
-            <i className="fas fa-music" />
+          <div style={{ width: '34px', height: '34px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+            <img src="/logo.png" alt="Music Vibe" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
           <h1 className="brand-title">Music Vibe</h1>
         </Link>

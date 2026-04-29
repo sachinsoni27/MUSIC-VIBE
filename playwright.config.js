@@ -8,6 +8,12 @@ export default {
     viewport: { width: 1280, height: 800 },
     ignoreHTTPSErrors: true,
   },
+  webServer: {
+    command: 'npm run dev',
+    url: 'http://localhost:5173',
+    reuseExistingServer: !process.env.CI,
+    timeout: 120 * 1000,
+  },
   // Prefer local Chrome when available
   projects: [
     { name: 'chromium', use: { channel: 'chrome' } },

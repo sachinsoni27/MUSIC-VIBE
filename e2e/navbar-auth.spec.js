@@ -11,5 +11,5 @@ test('Navbar shows Clerk sign-in when signed out', async ({ page }) => {
   await expect(page.locator('text=Sign Up')).toBeVisible()
   await page.click('text=Sign Up')
   await expect(page).toHaveURL(new RegExp('/clerk-signup'))
-  await expect(page.locator('text=Sign up with Clerk')).toBeVisible()
+  await expect(page.locator('text=Join Music Vibe')).toBeVisible()
 })
