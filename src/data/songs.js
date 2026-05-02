@@ -145,15 +145,15 @@ export const playlists = [
     name: 'Arijit Collection',
     image: arijitCollectionImg,
     songs: [
-      { id: 101, title: 'Chal Ghar Chalen', artist: 'Arijit Singh', audio: 'src/playlist/arijit collection/01 - Chal Ghar Chalen - DownloadMing.SE.mp3', duration: '4:32' },
-      { id: 102, title: 'Aabaad Barbaad', artist: 'Arijit Singh', audio: 'src/playlist/arijit collection/Aabaad Barbaad - Arijit Singh.mp3', duration: '4:20' },
-      { id: 103, title: 'Arz Kiya Hai', artist: 'Coke Studio', audio: 'src/playlist/arijit collection/Arz Kiya Hai _ Coke Studio Bharat - (Raag.Fm) (1).mp3', duration: '4:15' },
-      { id: 104, title: 'Aur Mohabbat Kitni Karoon', artist: 'Arijit Singh', audio: 'src/playlist/arijit collection/Aur Mohabbat Kitni Karoon - Metro In Dino 320 Kbps.mp3', duration: '3:58' },
-      { id: 105, title: 'Bairiya', artist: 'Arijit Singh', audio: 'src/playlist/arijit collection/Bairiya Arijit Singh 320 Kbps.mp3', duration: '4:45' },
-      { id: 106, title: 'Chaleya', artist: 'Arijit Singh', audio: 'src/playlist/arijit collection/Chaleya - Jawan-(DJMaza).mp3', duration: '3:42' },
-      { id: 107, title: 'Hardum Humdum', artist: 'Arijit Singh', audio: 'src/playlist/arijit collection/Hardum Humdum - Arijit Singh.mp3', duration: '4:10' },
-      { id: 108, title: 'Chahun Main Ya Naa', artist: 'Arijit Singh', audio: 'src/playlist/arijit collection/new_128_03 - Chahun Main Ya Naa - PagalSongs.com.mp3', duration: '3:55' },
-      { id: 109, title: 'Hum Mar Jayenge', artist: 'Arijit Singh', audio: 'src/playlist/arijit collection/new_128_04 - Hum Mar Jayenge - PagalSongs.com.mp3', duration: '4:28' }
+      { id: 101, title: 'Chal Ghar Chalen', artist: 'Arijit Singh', audio: 'playlist/arijit collection/01 - Chal Ghar Chalen - DownloadMing.SE.mp3', duration: '4:32' },
+      { id: 102, title: 'Aabaad Barbaad', artist: 'Arijit Singh', audio: 'playlist/arijit collection/Aabaad Barbaad - Arijit Singh.mp3', duration: '4:20' },
+      { id: 103, title: 'Arz Kiya Hai', artist: 'Coke Studio', audio: 'playlist/arijit collection/Arz Kiya Hai _ Coke Studio Bharat - (Raag.Fm) (1).mp3', duration: '4:15' },
+      { id: 104, title: 'Aur Mohabbat Kitni Karoon', artist: 'Arijit Singh', audio: 'playlist/arijit collection/Aur Mohabbat Kitni Karoon - Metro In Dino 320 Kbps.mp3', duration: '3:58' },
+      { id: 105, title: 'Bairiya', artist: 'Arijit Singh', audio: 'playlist/arijit collection/Bairiya Arijit Singh 320 Kbps.mp3', duration: '4:45' },
+      { id: 106, title: 'Chaleya', artist: 'Arijit Singh', audio: 'playlist/arijit collection/Chaleya - Jawan-(DJMaza).mp3', duration: '3:42' },
+      { id: 107, title: 'Hardum Humdum', artist: 'Arijit Singh', audio: 'playlist/arijit collection/Hardum Humdum - Arijit Singh.mp3', duration: '4:10' },
+      { id: 108, title: 'Chahun Main Ya Naa', artist: 'Arijit Singh', audio: 'playlist/arijit collection/new_128_03 - Chahun Main Ya Naa - PagalSongs.com.mp3', duration: '3:55' },
+      { id: 109, title: 'Hum Mar Jayenge', artist: 'Arijit Singh', audio: 'playlist/arijit collection/new_128_04 - Hum Mar Jayenge - PagalSongs.com.mp3', duration: '4:28' }
     ]
   },
   {
@@ -161,11 +161,11 @@ export const playlists = [
     name: '90s Songs',
     image: ninetysSongsImg,
     songs: [
-      { id: 201, title: 'Bahut Jatate Ho Chah Humse', artist: 'Kumar Sanu', audio: 'src/playlist/90s songs/Bahut Jatate Ho Chah Humse(KoshalWorld.Com).mp3', duration: '5:12' },
-      { id: 202, title: 'Bahut Pyar Karte Hai', artist: 'Kumar Sanu', audio: 'src/playlist/90s songs/Bahut Pyar Karte Hai (Male Version)(KoshalWorld.Com).mp3', duration: '5:45' },
-      { id: 203, title: 'Chori Chori Dil Tera Churayenge', artist: 'Kumar Sanu', audio: 'src/playlist/90s songs/Chori Chori Dil Tera Churayenge(KoshalWorld.Com).mp3', duration: '5:20' },
-      { id: 204, title: 'Pal Pal Dil Ke Paas', artist: 'Kishore Kumar', audio: 'src/playlist/90s songs/Pal Pal Dil Ke Paas(KoshalWorld.Com).mp3', duration: '4:55' },
-      { id: 205, title: 'Tujhko Na Dekhun', artist: 'Kumar Sanu', audio: 'src/playlist/90s songs/Tujhko Na Dekhun(KoshalWorld.Com).mp3', duration: '5:30' }
+      { id: 201, title: 'Bahut Jatate Ho Chah Humse', artist: 'Kumar Sanu', audio: 'playlist/90s songs/Bahut Jatate Ho Chah Humse(KoshalWorld.Com).mp3', duration: '5:12' },
+      { id: 202, title: 'Bahut Pyar Karte Hai', artist: 'Kumar Sanu', audio: 'playlist/90s songs/Bahut Pyar Karte Hai (Male Version)(KoshalWorld.Com).mp3', duration: '5:45' },
+      { id: 203, title: 'Chori Chori Dil Tera Churayenge', artist: 'Kumar Sanu', audio: 'playlist/90s songs/Chori Chori Dil Tera Churayenge(KoshalWorld.Com).mp3', duration: '5:20' },
+      { id: 204, title: 'Pal Pal Dil Ke Paas', artist: 'Kishore Kumar', audio: 'playlist/90s songs/Pal Pal Dil Ke Paas(KoshalWorld.Com).mp3', duration: '4:55' },
+      { id: 205, title: 'Tujhko Na Dekhun', artist: 'Kumar Sanu', audio: 'playlist/90s songs/Tujhko Na Dekhun(KoshalWorld.Com).mp3', duration: '5:30' }
     ]
   },
   {
@@ -173,7 +173,7 @@ export const playlists = [
     name: 'Coke Studio',
     image: cokeStudioImg,
     songs: [
-      { id: 301, title: 'Arz Kiya Hai', artist: 'Coke Studio Bharat', audio: 'src/playlist/coke studio/Arz Kiya Hai _ Coke Studio Bharat - (Raag.Fm) (1).mp3', duration: '4:15' }
+      { id: 301, title: 'Arz Kiya Hai', artist: 'Coke Studio Bharat', audio: 'playlist/coke studio/Arz Kiya Hai _ Coke Studio Bharat - (Raag.Fm) (1).mp3', duration: '4:15' }
     ]
   },
   {
@@ -181,9 +181,9 @@ export const playlists = [
     name: 'Old Hindi',
     image: oldHindiImg,
     songs: [
-      { id: 401, title: 'Bahut Jatate Ho Chah Humse', artist: 'Kumar Sanu', audio: 'src/playlist/90s songs/Bahut Jatate Ho Chah Humse(KoshalWorld.Com).mp3', duration: '5:12' },
-      { id: 402, title: 'Bahut Pyar Karte Hai', artist: 'Kumar Sanu', audio: 'src/playlist/90s songs/Bahut Pyar Karte Hai (Male Version)(KoshalWorld.Com).mp3', duration: '5:45' },
-      { id: 403, title: 'Chori Chori Dil Tera Churayenge', artist: 'Kumar Sanu', audio: 'src/playlist/90s songs/Chori Chori Dil Tera Churayenge(KoshalWorld.Com).mp3', duration: '5:20' }
+      { id: 401, title: 'Bahut Jatate Ho Chah Humse', artist: 'Kumar Sanu', audio: 'playlist/90s songs/Bahut Jatate Ho Chah Humse(KoshalWorld.Com).mp3', duration: '5:12' },
+      { id: 402, title: 'Bahut Pyar Karte Hai', artist: 'Kumar Sanu', audio: 'playlist/90s songs/Bahut Pyar Karte Hai (Male Version)(KoshalWorld.Com).mp3', duration: '5:45' },
+      { id: 403, title: 'Chori Chori Dil Tera Churayenge', artist: 'Kumar Sanu', audio: 'playlist/90s songs/Chori Chori Dil Tera Churayenge(KoshalWorld.Com).mp3', duration: '5:20' }
     ]
   },
   {
@@ -191,20 +191,20 @@ export const playlists = [
     name: 'South Indian',
     image: southIndianImg,
     songs: [
-      { id: 501, title: 'Beer Song', artist: 'Anirudh', audio: 'src/playlist/south songs/Beer-Song-MassTamilan.dev.mp3', duration: '3:45' },
-      { id: 502, title: 'Coffee Shop', artist: 'Anirudh', audio: 'src/playlist/south songs/Coffee-Shop-MassTamilan.dev.mp3', duration: '3:30' },
-      { id: 503, title: 'I am Always Free', artist: 'Anirudh', audio: 'src/playlist/south songs/I-am-Always-Free-MassTamilan.fm.mp3', duration: '3:20' },
-      { id: 504, title: 'Madurai Feel Good', artist: 'Ajay Musical', audio: 'src/playlist/south songs/Madurai - Feel Good Bgm  An Ajay Musical.mp3', duration: '2:45' },
-      { id: 505, title: 'Minnalvala', artist: 'South Artist', audio: 'src/playlist/south songs/Minnalvala(KoshalWorld.Com).mp3', duration: '4:10' },
-      { id: 506, title: 'Peelings', artist: 'South Artist', audio: 'src/playlist/south songs/Peelings.mp3', duration: '3:55' },
-      { id: 507, title: 'Singari', artist: 'Telugu Artist', audio: 'src/playlist/south songs/Singari (Telugu)(KoshalWorld.Com).mp3', duration: '4:25' },
-      { id: 508, title: 'Smiling With The Pain', artist: 'Theme Music', audio: 'src/playlist/south songs/Smiling With The Pain Theme.mp3', duration: '3:15' },
-      { id: 509, title: 'Sunrise Theme', artist: 'Theme Music', audio: 'src/playlist/south songs/Sunrise Theme.mp3', duration: '3:40' },
-      { id: 510, title: 'The Cycle', artist: 'South Artist', audio: 'src/playlist/south songs/The Cycle.mp3', duration: '3:50' },
-      { id: 511, title: 'The Love Bug Has Bitten', artist: 'South Artist', audio: 'src/playlist/south songs/The-Love-Bug-Has-Bitten.mp3', duration: '4:05' },
-      { id: 512, title: 'Thiruchitrambalam Title', artist: 'Anirudh', audio: 'src/playlist/south songs/Thiruchitrambalam-Title-Theme-MassTamilan.dev.mp3', duration: '2:55' },
-      { id: 513, title: 'Vizhi Veekura', artist: 'South Artist', audio: 'src/playlist/south songs/Vizhi Veekura.mp3', duration: '4:15' },
-      { id: 514, title: 'Welcome To Hyderabad', artist: 'Premalu BGM', audio: 'src/playlist/south songs/Welcome To Hyderabad – Premalu _ BGM Ringtone - MobCup.Com.Co.mp3', duration: '3:25' }
+      { id: 501, title: 'Beer Song', artist: 'Anirudh', audio: 'playlist/south songs/Beer-Song-MassTamilan.dev.mp3', duration: '3:45' },
+      { id: 502, title: 'Coffee Shop', artist: 'Anirudh', audio: 'playlist/south songs/Coffee-Shop-MassTamilan.dev.mp3', duration: '3:30' },
+      { id: 503, title: 'I am Always Free', artist: 'Anirudh', audio: 'playlist/south songs/I-am-Always-Free-MassTamilan.fm.mp3', duration: '3:20' },
+      { id: 504, title: 'Madurai Feel Good', artist: 'Ajay Musical', audio: 'playlist/south songs/Madurai - Feel Good Bgm  An Ajay Musical.mp3', duration: '2:45' },
+      { id: 505, title: 'Minnalvala', artist: 'South Artist', audio: 'playlist/south songs/Minnalvala(KoshalWorld.Com).mp3', duration: '4:10' },
+      { id: 506, title: 'Peelings', artist: 'South Artist', audio: 'playlist/south songs/Peelings.mp3', duration: '3:55' },
+      { id: 507, title: 'Singari', artist: 'Telugu Artist', audio: 'playlist/south songs/Singari (Telugu)(KoshalWorld.Com).mp3', duration: '4:25' },
+      { id: 508, title: 'Smiling With The Pain', artist: 'Theme Music', audio: 'playlist/south songs/Smiling With The Pain Theme.mp3', duration: '3:15' },
+      { id: 509, title: 'Sunrise Theme', artist: 'Theme Music', audio: 'playlist/south songs/Sunrise Theme.mp3', duration: '3:40' },
+      { id: 510, title: 'The Cycle', artist: 'South Artist', audio: 'playlist/south songs/The Cycle.mp3', duration: '3:50' },
+      { id: 511, title: 'The Love Bug Has Bitten', artist: 'South Artist', audio: 'playlist/south songs/The-Love-Bug-Has-Bitten.mp3', duration: '4:05' },
+      { id: 512, title: 'Thiruchitrambalam Title', artist: 'Anirudh', audio: 'playlist/south songs/Thiruchitrambalam-Title-Theme-MassTamilan.dev.mp3', duration: '2:55' },
+      { id: 513, title: 'Vizhi Veekura', artist: 'South Artist', audio: 'playlist/south songs/Vizhi Veekura.mp3', duration: '4:15' },
+      { id: 514, title: 'Welcome To Hyderabad', artist: 'Premalu BGM', audio: 'playlist/south songs/Welcome To Hyderabad – Premalu _ BGM Ringtone - MobCup.Com.Co.mp3', duration: '3:25' }
     ]
   },
   {
@@ -212,10 +212,10 @@ export const playlists = [
     name: 'Urdu Collection',
     image: urduCollectionImg,
     songs: [
-      { id: 601, title: 'Iraaday', artist: 'Urdu Artist', audio: 'src/playlist/urdu songs/Iraaday(PaglaSongs).mp3', duration: '4:20' },
-      { id: 602, title: 'Pal Pal', artist: 'Urdu Artist', audio: 'src/playlist/urdu songs/Pal Pal(KoshalWorld.Com).mp3', duration: '4:45' },
-      { id: 603, title: 'Pasoori', artist: 'Shae Gill', audio: 'src/playlist/urdu songs/Pasoori - Shae Gill.mp3', duration: '3:55' },
-      { id: 604, title: 'Sadqay', artist: 'Urdu Artist', audio: 'src/playlist/urdu songs/Sadqay-(PagalSongs.Com.IN).mp3', duration: '4:10' }
+      { id: 601, title: 'Iraaday', artist: 'Urdu Artist', audio: 'playlist/urdu songs/Iraaday(PaglaSongs).mp3', duration: '4:20' },
+      { id: 602, title: 'Pal Pal', artist: 'Urdu Artist', audio: 'playlist/urdu songs/Pal Pal(KoshalWorld.Com).mp3', duration: '4:45' },
+      { id: 603, title: 'Pasoori', artist: 'Shae Gill', audio: 'playlist/urdu songs/Pasoori - Shae Gill.mp3', duration: '3:55' },
+      { id: 604, title: 'Sadqay', artist: 'Urdu Artist', audio: 'playlist/urdu songs/Sadqay-(PagalSongs.Com.IN).mp3', duration: '4:10' }
     ]
   }
 ];
